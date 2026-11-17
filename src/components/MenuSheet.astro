@@ -3,6 +3,7 @@ import Icon from './Icon.astro';
 import { services, primary } from '../lib/nav';
 import { url } from '../lib/url';
 import shared from '../data/copy/shared.json';
+import { brandCase } from '../lib/text';
 
 // Sheet lists the same services and information links as the desktop menu, plus the FAQ.
 const faqLabel = shared.footer.columns[1].links[4];
@@ -11,7 +12,7 @@ const faqLabel = shared.footer.columns[1].links[4];
   <div class="sheet__top">
     <a class="brand" href={url('')}>
       <span class="brand__mark" aria-hidden="true">DC</span>
-      <span class="brand__text"><span class="brand__name">{shared.header.brand_name}</span><span class="brand__role">{shared.header.brand_role}</span></span>
+      <span class="brand__text"><span class="brand__name">{brandCase(shared.header.brand_name)}</span><span class="brand__role">{brandCase(shared.header.brand_role)}</span></span>
     </a>
     <button class="nav-toggle" type="button" data-close-sheet style="display:inline-flex"><Icon name="x" />Cerrar</button>
   </div>

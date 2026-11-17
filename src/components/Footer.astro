@@ -2,6 +2,7 @@
 import { PROVISIONAL } from '../lib/env';
 import { url } from '../lib/url';
 import shared from '../data/copy/shared.json';
+import { brandCase } from '../lib/text';
 
 const [services, information, contact] = shared.footer.columns;
 // Labels from shared.json; hrefs follow the nav order of each column.
@@ -29,7 +30,7 @@ const year = new Date().getFullYear();
       <div class="site-footer__brand">
         <a class="brand" href={url('')}>
           <span class="brand__mark" aria-hidden="true">DC</span>
-          <span class="brand__text"><span class="brand__name">{shared.footer.brand_name}</span><span class="brand__role">{shared.footer.brand_role}</span></span>
+          <span class="brand__text"><span class="brand__name">{brandCase(shared.footer.brand_name)}</span><span class="brand__role">{brandCase(shared.footer.brand_role)}</span></span>
         </a>
         <p class="site-footer__tag">{shared.footer.tagline}</p>
       </div>

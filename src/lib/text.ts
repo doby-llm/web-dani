@@ -14,3 +14,11 @@ export function accent(text: string, n: number): string {
   const end = text.search(/[.,;:!?…»)]*$/);
   return esc(text.slice(0, start)) + '<em>' + esc(text.slice(start, end)) + '</em>' + esc(text.slice(end));
 }
+
+/* Brand words kept in shared.json as capitals; rendered as the mockups show them.
+   Only fully uppercase input changes; anything else is returned as is.
+   brandCase('DANIEL CLEMENTE') → 'Daniel Clemente'; brandCase('Nutricionista') → 'Nutricionista' */
+export function brandCase(s: string): string {
+  if (s !== s.toUpperCase()) return s;
+  return s.toLowerCase().replace(/(^|\s)(\S)/g, (_, sp: string, c: string) => sp + c.toUpperCase());
+}
