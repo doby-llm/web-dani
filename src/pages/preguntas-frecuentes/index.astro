@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Button from '../../components/Button.astro';
+import Icon from '../../components/Icon.astro';
+import { accent } from '../../lib/text';
+import faq from '../../data/copy/preguntas-frecuentes.json';
+import home from '../../data/copy/home.json';
+
+const items = faq.sections[0].items;
+const finalCta = home.sections.find(s => s.id === 'final-cta')!;
+// Microcopy crumbs.faq (SPEC §4.3).
+const crumb = 'Preguntas frecuentes';
+---
+<BaseLayout title="Preguntas frecuentes · Daniel Clemente" description="Cómo es la primera valoración, qué recibes, cómo funciona WhatsApp, la videollamada mensual y la opción con tratamiento médico." ogSlug="preguntas-frecuentes">
+  <main id="main">
+    <section class="page-hero page-hero--v4 bg-medical" aria-labelledby="ph-title">
+      <div class="container">
+        <Breadcrumb items={[{ label: 'Inicio', href: '' }, { label: crumb }]} />
+        <h1 id="ph-title" set:html={accent(faq.h1, 3)}></h1>
+        <p class="lead">{faq.lead}</p>
+        <div class="btn-row btn-row--stack" data-action-bar-trigger>
+          <Button href="contacto/" variant="primary">{faq.hero_ctas[0]}</Button>
+          <Button href="programas/" variant="secondary">{faq.hero_ctas[1]}</Button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-paper" aria-labelledby="listo-title">
+      <div class="container--narrow">
+        <div class="faq">
+          {items.map((item, i) => (
+            <details class="faq__item" open={i === 0}>
+              <summary>{item.title}<span class="faq__icon" aria-hidden="true"><Icon name="plus" /></span></summary>
+              <div class="faq__answer"><p>{item.text}</p></div>
+            </details>
+          ))}
+        </div>
+
+        <div class="panel" style="margin-top:var(--s-7)">
+          <h2 id="listo-title">{finalCta.heading}</h2>
+          <p style="margin-top:var(--s-4)">{finalCta.paragraphs[0]}</p>
+          <div class="btn-row" style="margin-top:var(--s-5)">
+            <Button href="contacto/" variant="primary">{finalCta.ctas[0]}</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

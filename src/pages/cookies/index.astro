@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalPage from '../../components/sections/LegalPage.astro';
+import shared from '../../data/copy/shared.json';
+
+// Footer label "Cookies" (shared.json footer.columns[2].links).
+const crumb = shared.footer.columns[2].links[3];
+---
+<BaseLayout title="Cookies · Daniel Clemente" description="Esta web no usa cookies ni herramientas de analítica." ogSlug="cookies">
+  <LegalPage copyKey="cookies" crumb={crumb} />
+</BaseLayout>

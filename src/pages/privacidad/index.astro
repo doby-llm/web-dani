@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalPage from '../../components/sections/LegalPage.astro';
+import shared from '../../data/copy/shared.json';
+
+// Footer label "Privacidad" (shared.json footer.columns[2].links).
+const crumb = shared.footer.columns[2].links[2];
+---
+<BaseLayout title="Privacidad · Daniel Clemente" description="Política de privacidad de la web de Daniel Clemente, nutricionista (en preparación). El formulario todavía no guarda datos." ogSlug="privacidad">
+  <LegalPage copyKey="privacidad" crumb={crumb} />
+</BaseLayout>
