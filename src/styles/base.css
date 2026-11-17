@@ -1,0 +1,66 @@
+/* =========================================================
+   base.css v3 (CANONICAL) — reset, elements, layout primitives
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 1rem); color-scheme: light; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+}
+body { font-family: var(--font-sans); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: clip; }
+img, picture, svg, video { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+p, li, dd, td { text-wrap: pretty; }
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 560; line-height: var(--lh-heading); letter-spacing: -0.012em; text-wrap: balance; color: var(--ink); font-optical-sizing: auto; }
+h1 { font-size: var(--fs-h1); font-weight: 560; }
+h1 em, h2 em { font-style: italic; font-weight: 450; color: var(--brand); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+strong, b { font-weight: 650; }
+small { font-size: var(--fs-small); }
+a { color: var(--brand); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { color: var(--brand-hover); text-decoration-thickness: 2px; }
+::selection { background: var(--brand-tint); color: var(--ink); }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 2px; }
+.on-dark :focus-visible { outline-color: var(--paper); }
+input, textarea { caret-color: var(--brand); }
+html { scrollbar-color: var(--line-strong) var(--paper); }
+.num, .price, td { font-variant-numeric: tabular-nums lining-nums; }
+
+.container { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
+.container--narrow { width: min(100% - 2 * var(--gutter), 46rem); margin-inline: auto; }
+.section { padding-block: var(--section-y); }
+.section--tight { padding-block: calc(var(--section-y) * 0.6); }
+.section + .section.bg-paper, .bg-paper + .bg-paper { border-top: 1px solid var(--line); }
+.stack > * + * { margin-top: var(--stack, var(--s-4)); }
+.measure { max-width: var(--measure); }
+
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.skip-link { position: absolute; left: var(--s-4); top: -10rem; z-index: 100; background: var(--brand); color: var(--paper); padding: var(--s-3) var(--s-5); border-radius: var(--r-m); font-weight: 600; text-decoration: none; }
+.skip-link:focus { top: var(--s-3); color: var(--paper); }
+
+/* grounds — quiet, never saturated except .bg-brand (max one band per page) */
+.bg-paper   { background: var(--paper); }
+.bg-surface { background: var(--surface); }
+.bg-surface-2 { background: var(--surface-2); }
+.bg-tint    { background: var(--brand-tint); }
+.bg-brand   { background: var(--brand); color: var(--paper); }
+.bg-brand h1, .bg-brand h2, .bg-brand h3 { color: var(--paper); }
+.bg-brand a:not(.btn) { color: var(--paper); }
+.bg-surface, .bg-surface-2 { border-block: 1px solid var(--line); }
+.muted { color: var(--ink-2); }
+.bg-brand .muted { color: var(--brand-soft); }
+.lead { font-size: var(--fs-lead); line-height: 1.55; color: var(--ink-2); max-width: 60ch; }
+
+/* v4 service tint grounds (soft, never saturated) */
+.bg-weight  { background: var(--t-weight); }
+.bg-medical { background: var(--t-medical); }
+.bg-sport   { background: var(--t-sport); }
+.bg-clinic  { background: var(--t-clinic); }
+.bg-weight, .bg-medical, .bg-sport, .bg-clinic { border-block: 1px solid var(--line); }
+.svc-weight  { --svc: var(--t-weight);  --svc-fg: var(--accent); }
+.svc-medical { --svc: var(--t-medical); --svc-fg: var(--brand); }
+.svc-sport   { --svc: var(--t-sport);   --svc-fg: var(--ink); }
+.svc-clinic  { --svc: var(--t-clinic);  --svc-fg: var(--brand); }
