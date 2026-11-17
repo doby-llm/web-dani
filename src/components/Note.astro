@@ -1,0 +1,20 @@
+---
+import Icon from './Icon.astro';
+import { PROVISIONAL, SHOW_EDITORIAL } from '../lib/env';
+
+type NoteKind = 'legal' | 'provisional' | 'editorial';
+interface Props {
+  note: { text: string; kind: NoteKind } | string;
+  boxed?: boolean;
+  icon?: string;
+}
+const { note, boxed = false, icon = 'info' } = Astro.props;
+const { text, kind } = typeof note === 'string' ? { text: note, kind: 'provisional' as NoteKind } : note;
+// DEC-07: legal always; provisional while PUBLIC_PROVISIONAL; editorial while PUBLIC_SHOW_EDITORIAL.
+const visible = kind === 'legal' || (kind === 'provisional' && PROVISIONAL) || (kind === 'editorial' && SHOW_EDITORIAL);
+---
+{visible && (
+  <p class:list={['note', boxed && 'note--boxed']}>
+    <Icon name={icon} />{text}
+  </p>
+)}

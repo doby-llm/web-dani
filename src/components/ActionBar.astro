@@ -1,0 +1,12 @@
+---
+import { url } from '../lib/url';
+import shared from '../data/copy/shared.json';
+
+interface Props { hidden?: boolean }
+const { hidden = false } = Astro.props;
+---
+{!hidden && (
+  <div class="action-bar" data-visible="false">
+    <a class="btn btn--primary" href={url('contacto/')}>{shared.floating.mobile_contact_bar}</a>
+  </div>
+)}

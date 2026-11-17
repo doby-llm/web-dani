@@ -1,0 +1,22 @@
+---
+import { url } from '../lib/url';
+
+interface Props { items: { label: string; href?: string }[] }
+const { items } = Astro.props;
+// First crumb is always Inicio (microcopy crumbs.home), the last one is the current page.
+const crumbs = items.map((it, i) => i === 0
+  ? { label: 'Inicio', href: '' }
+  : it);
+---
+<nav class="breadcrumb" aria-label="Migas de pan">
+  <ol>
+    {crumbs.map((c, i) => {
+      const last = i === crumbs.length - 1;
+      return (
+        <li aria-current={last ? 'page' : undefined}>
+          {last || c.href === undefined ? c.label : <a href={url(c.href)}>{c.label}</a>}
+        </li>
+      );
+    })}
+  </ol>
+</nav>

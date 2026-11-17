@@ -1,0 +1,46 @@
+---
+import { PROVISIONAL } from '../lib/env';
+import { url } from '../lib/url';
+import shared from '../data/copy/shared.json';
+import { brandCase } from '../lib/text';
+
+const [services, information, contact] = shared.footer.columns;
+// Labels from shared.json; hrefs follow the nav order of each column.
+const serviceLinks = [
+  { label: services.links[0], href: 'perdida-de-peso/' },
+  { label: 'Tratamiento médico', href: 'perdida-de-peso/tratamiento-medico/' }, // microcopy nav.medical
+  { label: services.links[1], href: 'nutricion-deportiva/' },
+  { label: services.links[2], href: 'nutricion-clinica/' },
+];
+const infoLinks = information.links.map((label, i) => ({
+  label,
+  href: ['como-funciona/', 'programas/', 'sobre-mi/', 'blog/', 'preguntas-frecuentes/'][i],
+}));
+const contactLinks = contact.links.map((label, i) => ({
+  label,
+  href: ['contacto/', 'aviso-legal/', 'privacidad/', 'cookies/'][i],
+}));
+// "© {año} Daniel Clemente Nutricionista": the year is a span so it can be refreshed client-side.
+const [copyBefore, copyAfter] = shared.footer.bottom[0].split('{año}');
+const year = new Date().getFullYear();
+---
+<footer class="site-footer on-dark">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="brand" href={url('')}>
+          <span class="brand__mark" aria-hidden="true">DC</span>
+          <span class="brand__text"><span class="brand__name">{brandCase(shared.footer.brand_name)}</span><span class="brand__role">{brandCase(shared.footer.brand_role)}</span></span>
+        </a>
+        <p class="site-footer__tag">{shared.footer.tagline}</p>
+      </div>
+      <div><h2>{services.heading}</h2><ul>{serviceLinks.map(l => <li><a href={url(l.href)}>{l.label}</a></li>)}</ul></div>
+      <div><h2>{information.heading}</h2><ul>{infoLinks.map(l => <li><a href={url(l.href)}>{l.label}</a></li>)}</ul></div>
+      <div><h2>{contact.heading}</h2><ul>{contactLinks.map(l => <li><a href={url(l.href)}>{l.label}</a></li>)}</ul></div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>{copyBefore}<span data-year>{year}</span>{copyAfter}</span>
+      {PROVISIONAL && <span>{shared.site_notice}</span>}
+    </div>
+  </div>
+</footer>

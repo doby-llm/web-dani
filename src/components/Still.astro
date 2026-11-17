@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Obj {
+  src: ImageMetadata;
+  w: string;
+  top?: string;
+  left?: string;
+  right?: string;
+  bottom?: string;
+  rotate: number;
+}
+interface Props {
+  objects: Obj[];
+  settle?: boolean;
+  // Mockup inline style of the wrapper (404 sets position/size on it). Optional.
+  style?: string;
+}
+const { objects, settle = false, style } = Astro.props;
+if (objects.length > 3) throw new Error(`Still: max 3 objects, got ${objects.length}`);
+// Geometry = mockup inline styles (R20): exactly two of top/left/right/bottom per object.
+for (const o of objects) {
+  const anchors = [o.top, o.left, o.right, o.bottom].filter(Boolean).length;
+  if (anchors !== 2) throw new Error(`Still: each object needs exactly two anchors, got ${anchors}`);
+}
+const place = (o: Obj) => ['top', 'left', 'right', 'bottom']
+  .filter(k => o[k as keyof Obj] !== undefined)
+  .map(k => `${k}:${o[k as keyof Obj]}`).join(';');
+---
+<div class:list={['still', settle && 'still--settle']} style={style} aria-hidden="true">
+  {objects.map(o => (
+    <Image
+      class="still__obj"
+      src={o.src}
+      alt=""
+      widths={[240, 480]}
+      sizes="(max-width: 899px) 40vw, 20vw"
+      style={`width:${o.w};${place(o)};transform:rotate(${o.rotate}deg)`}
+    />
+  ))}
+</div>
