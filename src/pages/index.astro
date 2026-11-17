@@ -1,12 +1,308 @@
 ---
-// Placeholder until T04. Uses BaseLayout; the page sheets are imported there.
+// Home (T04): design/mockups/src/home.body.html, section order per R21.
+// Copy: home.json, sobre-mi.json, shared.json (brand name). Microcopy: SPEC §4.3, typed inline as in T03.
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+import Note from '../components/Note.astro';
+import Still from '../components/Still.astro';
+import { PROVISIONAL } from '../lib/env';
+import { primary, services } from '../lib/nav';
+import { accent, brandCase } from '../lib/text';
+import { url } from '../lib/url';
 import home from '../data/copy/home.json';
+import sobreMi from '../data/copy/sobre-mi.json';
+import shared from '../data/copy/shared.json';
+import portrait from '../assets/img/portrait.webp';
+import avocado from '../assets/img/avocado.png';
+import grapefruit from '../assets/img/grapefruit.png';
+import lemonA from '../assets/img/lemon-a.png';
+import lemonB from '../assets/img/lemon-b.png';
+import lemonC from '../assets/img/lemon-c.png';
+
+const sec = (id: string) => home.sections.find(s => s.id === id)!;
+const bio = (id: string) => sobreMi.sections.find(s => s.id === id)!;
+const medical = sec('medical-treatment');
+const objectives = sec('objectives');
+const pricing = sec('pricing');
+const protocol = sec('process');
+const ctaBanner = sec('cta-banner');
+const about = sec('about');
+const blog = sec('blog');
+const finalCta = sec('final-cta');
+const [planA, planB] = pricing.items!;
+const como = primary.find(p => p.key === 'como')!;
+
+// Microcopy (SPEC §4.3)
+const micro = {
+  credRole: 'Nutricionista', // cred.role
+  cvEducation: 'Formación', // cv.education
+  durationAria: 'Duración del programa', // aria.duration
+  soon: 'Próximamente', // status.soon
+  chipMedical: 'Tratamiento médico · provisional', // chip.medical
+  roles: 'Daniel / La profesional médica', // roles
+  cats: ['Pérdida de peso', 'Nutrición deportiva', 'Hábitos'], // cat.* in blog order
+};
+const [rolDaniel, rolMedica] = micro.roles.split(' / ');
+
+// Hero: credentials = sobre-mi formación [0] and [2], home about items[2]; trailing period removed
+const formacion = bio('formacion').items!;
+const credentials = [
+  { icon: 'graduation-cap', text: formacion[0].text },
+  { icon: 'graduation-cap', text: formacion[2].text },
+  { icon: 'school', text: about.items![2].text },
+];
+
+// Trust strip: home about items[0..3]
+const trustIcons = ['laptop-minimal-check', 'stethoscope', 'school', 'microscope'];
+
+// Services: same descriptions as ServicesMenu.astro (medical = the sentence after the first one of the medical paragraph)
+const medicalParagraph = medical.paragraphs![0];
+const svcRows = [
+  { svc: 'weight', nav: services[0], title: objectives.items![0].title, text: objectives.items![0].text, food: grapefruit },
+  { svc: 'medical', nav: services[1], title: services[1].title, text: medicalParagraph.slice(medicalParagraph.indexOf('. ') + 2), food: null },
+  { svc: 'sport', nav: services[2], title: objectives.items![1].title, text: objectives.items![1].text, food: lemonC },
+  { svc: 'clinic', nav: services[3], title: objectives.items![2].title, text: objectives.items![2].text, food: avocado },
+];
+
+// Medical: roles split rule (T04 item 4). Three sentences → table + legal note; otherwise one legal note.
+const legal = medical.disclaimers![0].text;
+const legalParts = legal.split(/(?<=\.)\s+/);
+const roleSplit = legalParts.length === 3 ? legalParts : null;
+
+// Pricing: duration switch values from the copy; price swap keys data-p2/p4/p6
+const durations = planA.prices.map(p => ({ months: p.duration.split(' ')[0], label: p.duration }));
+const priceSwap = (plan: { prices: { duration: string; price: string }[] }) =>
+  Object.fromEntries(plan.prices.map(p => [`data-p${p.duration.split(' ')[0]}`, p.price]));
+
+// About: heading accent on "cercana, clara" (mockup <em>); plain text if the words are absent
+const aboutWord = 'cercana, clara';
+const aboutAt = about.heading.indexOf(aboutWord);
+const experiencia = bio('experiencia');
+const docencia = bio('docencia-enfoque');
+
+// Blog teasers: unlinked (R9); categories by index
+const posts = blog.items!;
+
+// Still geometry = mockup inline styles (R20); two anchors per object
+const hero = [
+  { src: avocado, w: '30%', right: '-2%', top: '4%', rotate: -16 },
+  { src: lemonA, w: '20%', right: '2%', bottom: '14%', rotate: 10 },
+  { src: lemonB, w: '17%', left: '4%', top: '8%', rotate: -6 },
+];
+const band = [
+  { src: avocado, w: '52%', right: '0', top: '0', rotate: -22 },
+  { src: lemonA, w: '36%', left: '6%', bottom: '0', rotate: 14 },
+];
+
+const pricingNote = pricing.disclaimers![0] as { text: string; kind: 'provisional' };
+const aboutNote = about.disclaimers![0] as { text: string; kind: 'editorial' };
 ---
-<BaseLayout title={home.meta.title} description={home.meta.description} ogSlug="home">
+<BaseLayout
+  title="Daniel Clemente · Nutricionista online"
+  description="Pérdida de peso, nutrición deportiva y clínica con un enfoque integral, personalizado y basado en evidencia científica. 100% online."
+  ogSlug="home"
+>
   <main id="main">
-    <h1>Hola</h1>
-    <div data-action-bar-trigger aria-hidden="true" style="height:1px"></div>
-    <div aria-hidden="true" style="min-height:150vh"></div>
+
+    <!-- H1 HERO: statement left; portrait + credentials card right -->
+    <section class="hero hero--v4" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div>
+          <h1 id="hero-title" set:html={accent(home.h1, 3)}></h1>
+          <p class="lead">{home.lead}</p>
+          <div class="btn-row btn-row--stack hero__actions" data-action-bar-trigger>
+            <Button href="contacto/" variant="primary">{home.hero_ctas[0]}</Button>
+            <Button href="programas/" variant="secondary">{home.hero_ctas[1]}</Button>
+          </div>
+          <ul class="checks-inline">
+            {home.hero_proof.map(t => <li><Icon name="check" />{t}</li>)}
+          </ul>
+        </div>
+        <figure class="hero__stage">
+          <div class="hero__art">
+            <div class="hero__disc" aria-hidden="true"></div>
+            <div class="hero__photo">
+              <Image src={portrait} alt={about.images![0].alt} widths={[480, 768]} sizes="(min-width: 900px) 40vw, 90vw" loading="eager" fetchpriority="high" />
+            </div>
+            <Still settle objects={hero} />
+          </div>
+          <figcaption class="cred-card">
+            <p class="cred-card__name">{brandCase(shared.header.brand_name)}</p>
+            <p class="cred-card__role">{micro.credRole}</p>
+            <ul>
+              {credentials.map(c => <li><Icon name={c.icon} />{c.text.replace(/\.$/, '')}</li>)}
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- H2 TRUST STRIP: four verifiable facts from copy -->
+    <section class="bg-paper" aria-label={bio('experiencia').heading}>
+      <div class="container">
+        <ul class="trust" style="list-style:none;padding-left:0">
+          {about.items!.slice(0, 4).map((item, i) => (
+            <li class="trust__item"><span class="icon-badge"><Icon name={trustIcons[i]} /></span><span>{item.text}</span></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- H3 SERVICES: directory rows -->
+    <section class="section bg-paper" aria-labelledby="svc-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="svc-title">{objectives.heading}</h2>
+          <p>{objectives.paragraphs![0]}</p>
+        </div>
+        <ul class="svc-index">
+          {svcRows.map(r => (
+            <li class:list={['svc-row', `svc-${r.svc}`]}>
+              <span class="icon-badge"><Icon name={r.nav.icon} /></span>
+              <h3><a href={url(r.nav.path)}>{r.title}</a></h3>
+              <p>{r.text}</p>
+              <span class="svc-row__food" aria-hidden="true">
+                {r.food && <Image src={r.food} widths={[160, 320]} sizes="160px" alt="" />}
+              </span>
+              <span class="svc-row__go" aria-hidden="true"><Icon name="arrow-right" /></span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- H4 MEDICAL: callout with explicit roles table, no food -->
+    <section class="section bg-medical" aria-labelledby="med-title">
+      <div class="container split split--5-7" style="align-items:start">
+        <div class="sec-head sec-head--stack" style="margin-bottom:0">
+          <h2 id="med-title">{medical.heading}</h2>
+          <p>{medicalParagraph}</p>
+          <p style="margin-top:var(--s-5)"><a class="link-arrow" href={url(services[1].path)}>{medical.ctas![0]} <Icon name="arrow-right" /></a></p>
+        </div>
+        <div class="callout">
+          {roleSplit && (
+            <table class="roles">
+              <tbody>
+                <tr><th scope="row" style="border-top:0"><span><Icon name="clipboard-list" />{rolDaniel}</span></th><td style="border-top:0">{roleSplit[0]}</td></tr>
+                <tr><th scope="row"><span><Icon name="stethoscope" />{rolMedica}</span></th><td>{roleSplit[1]}</td></tr>
+              </tbody>
+            </table>
+          )}
+          <div class="callout__foot"><Note note={{ text: roleSplit ? roleSplit[2] : legal, kind: 'legal' }} /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- H5 PROCESS -->
+    <section class="section bg-paper" aria-labelledby="proc-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="proc-title">{protocol.heading}</h2>
+          <p>{protocol.paragraphs![0]}</p>
+        </div>
+        <ol class="protocol">
+          {protocol.items!.map((step, i) => (
+            <li class="protocol__step"><span class="protocol__n">{i + 1}</span><h3>{step.title}</h3><p>{step.text}</p></li>
+          ))}
+        </ol>
+        <p style="margin-top:var(--s-6)"><a class="link-arrow" href={url(como.path)}>{como.label} <Icon name="arrow-right" /></a></p>
+      </div>
+    </section>
+
+    <!-- H6 PRICING -->
+    <section class="section bg-surface" aria-labelledby="price-title" data-pricing>
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="price-title">{pricing.heading}</h2>
+          <div>
+            <fieldset class="duration" data-duration-switch>
+              <legend class="visually-hidden">{micro.durationAria}</legend>
+              {durations.map((d, i) => (
+                <label class="duration__opt"><input type="radio" name="dur" value={d.months} data-label={d.label} checked={i === 0} /><span>{d.label}</span></label>
+              ))}
+            </fieldset>
+          </div>
+        </div>
+        <div class="plans">
+          <article class="plan">
+            <div class="plan__top"><span class="plan__letter">Programa {planA.program}</span></div>
+            <h3>{planA.title}</h3>
+            <p class="plan__sub">{planA.text}</p>
+            <p class="plan__price"><span class="plan__amount" data-price-swap {...priceSwap(planA)}>{planA.prices[0].price}</span><span class="plan__per">/ <span data-duration-label>{planA.prices[0].duration}</span></span></p>
+            <ul class="plan__list">
+              {planA.includes!.map(t => <li><Icon name="check" />{t}</li>)}
+            </ul>
+            <div class="plan__cta"><Button href="programas/#programa-a" variant="secondary" block>{planA.ctas![0]}</Button></div>
+          </article>
+          <article class="plan plan--featured">
+            <div class="plan__top"><span class="plan__letter">Programa {planB.program}</span>{PROVISIONAL && <span class="badge badge--provisional">{micro.chipMedical}</span>}</div>
+            <h3>{planB.title}</h3>
+            <p class="plan__sub">{planB.text}</p>
+            <p class="plan__price"><span class="plan__amount" data-price-swap {...priceSwap(planB)}>{planB.prices[0].price}</span><span class="plan__per">/ <span data-duration-label>{planB.prices[0].duration}</span></span></p>
+            <ul class="plan__list">
+              {planB.includes!.map(t => <li><Icon name="check" />{t}</li>)}
+            </ul>
+            <div class="plan__cta"><Button href="programas/#programa-b" variant="primary" block arrow={false}>{planB.ctas![0]}</Button></div>
+          </article>
+        </div>
+        <div style="margin-top:var(--s-5)"><Note note={pricingNote} /></div>
+      </div>
+    </section>
+
+    <!-- H7 ABOUT: working photo + CV list -->
+    <section class="section bg-paper" aria-labelledby="about-title">
+      <div class="container profile">
+        <figure>
+          <div class="portrait"><Image src={portrait} alt={about.images![0].alt} widths={[480, 768]} sizes="(min-width: 900px) 40vw, 90vw" loading="lazy" /></div>
+        </figure>
+        <div>
+          <div class="sec-head sec-head--stack" style="margin-bottom:0">
+            <h2 id="about-title">
+              {aboutAt < 0 ? about.heading : <>{about.heading.slice(0, aboutAt)}<em>{aboutWord}</em>{about.heading.slice(aboutAt + aboutWord.length)}</>}
+            </h2>
+            <p>{about.paragraphs![0]}</p>
+          </div>
+          <dl class="cv">
+            <div class="cv__row"><dt>{micro.cvEducation}</dt><dd><ul>{formacion.map(i => <li>{i.text}</li>)}</ul></dd></div>
+            <div class="cv__row"><dt>{experiencia.heading}</dt><dd>{about.items!.slice(0, 2).map(i => i.text).join(' ')}</dd></div>
+            <div class="cv__row"><dt>{docencia.heading}</dt><dd>{about.items!.slice(2, 4).map(i => i.text).join(' ')}</dd></div>
+          </dl>
+          <div style="margin-top:var(--s-4)"><Note note={aboutNote} /></div>
+          <p style="margin-top:var(--s-5)"><a class="link-arrow" href={url('sobre-mi/')}>{about.ctas![0]} <Icon name="arrow-right" /></a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- H8 BLOG -->
+    <section class="section bg-paper" aria-labelledby="blog-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="blog-title">{blog.heading}</h2>
+          <p>{blog.paragraphs![0]}</p>
+        </div>
+        <ul class="posts">
+          {posts.map((post, i) => (
+            <li class="post-row"><span class="post-row__cat">{micro.cats[i]}</span><div><h3>{post.title}</h3><p>{post.text}</p></div><span class="badge post-row__status">{micro.soon}</span></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- H9 CTA BAND: the only brand-coloured band of the page -->
+    <section class="cta-band cta-band--v4 bg-brand on-dark" aria-labelledby="cta-title" data-hide-action-bar>
+      <div class="container cta-band__inner">
+        <div>
+          <h2 id="cta-title" set:html={accent(ctaBanner.heading, 3)}></h2>
+          <p>{finalCta.paragraphs![0]}</p>
+          <div class="btn-row btn-row--stack" style="margin-top:var(--s-6)">
+            <Button href="contacto/" variant="primary" arrow={false}>{ctaBanner.ctas![0]}</Button>
+            <Button href="programas/" variant="secondary">{home.hero_ctas[1]}</Button>
+          </div>
+        </div>
+        <Still objects={band} />
+      </div>
+    </section>
   </main>
 </BaseLayout>
