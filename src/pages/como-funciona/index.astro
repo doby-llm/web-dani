@@ -1,0 +1,106 @@
+---
+// Cómo funciona: five-step protocol. Still life only in the hero and the closing band (R20).
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Button from '../../components/Button.astro';
+import Note from '../../components/Note.astro';
+import Still from '../../components/Still.astro';
+import { accent } from '../../lib/text';
+import { primary } from '../../lib/nav';
+import comoFunciona from '../../data/copy/como-funciona.json';
+import home from '../../data/copy/home.json';
+import grapefruit from '../../assets/img/grapefruit.png';
+import lemonA from '../../assets/img/lemon-a.png';
+import lemonB from '../../assets/img/lemon-b.png';
+
+const section = (id: string) => comoFunciona.sections.find(s => s.id === id)!;
+const pasos = section('pasos');
+const espera = section('que-se-espera');
+const noIncluido = section('que-no-incluido');
+const ctaBanner = home.sections.find(s => s.id === 'cta-banner')!;
+
+// Microcopy §4.3: cta.how (visually hidden h2 of the protocol).
+const ctaHow = 'Cómo funciona';
+---
+<BaseLayout
+  title="Cómo funciona el seguimiento · Daniel Clemente"
+  description="Cinco pasos: valoración inicial, plan con recetas y menú, seguimiento semanal y por WhatsApp, videollamada mensual y ajustes."
+  ogSlug="como-funciona"
+  current="como"
+>
+  <main id="main">
+    <section class="page-hero page-hero--v4 bg-sport" aria-labelledby="ph-title">
+      <div class="container">
+        <Breadcrumb items={[{ label: 'Inicio' }, { label: primary.find(p => p.key === 'como')!.label }]} />
+        <div class="page-hero__grid">
+          <div>
+            <h1 id="ph-title" set:html={accent(comoFunciona.h1, 3)}></h1>
+            <p class="lead">{comoFunciona.lead}</p>
+            <div class="btn-row btn-row--stack" data-action-bar-trigger>
+              <Button href="contacto/" variant="primary">{comoFunciona.hero_ctas[0]}</Button>
+              <Button href="programas/" variant="secondary">{comoFunciona.hero_ctas[1]}</Button>
+            </div>
+          </div>
+          <div class="page-hero__aside">
+            <Still
+              settle
+              style="position:relative;inset:auto;width:100%;height:14rem"
+              objects={[
+                { src: lemonA, w: '46%', right: '2%', top: '0', rotate: 12 },
+                { src: lemonB, w: '36%', left: '8%', bottom: '2%', rotate: -8 },
+              ]}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-paper" aria-labelledby="pasos-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="pasos-title">{ctaHow}</h2>
+        <ol class="protocol">
+          {pasos.items.map((it, i) => (
+            <li class="protocol__step">
+              <span class="protocol__n">{i + 1}</span>
+              <h3>{it.title}</h3>
+              <p>{it.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section bg-surface">
+      <div class="container split">
+        <div class="panel">
+          <h2>{espera.heading}</h2>
+          <p style="margin-top:var(--s-4)">{espera.paragraphs[0]}</p>
+          <div style="margin-top:var(--s-4)">
+            <Note note={{ text: espera.disclaimers[0].text, kind: 'legal' }} />
+          </div>
+        </div>
+        <div class="panel">
+          <h2>{noIncluido.heading}</h2>
+          <p style="margin-top:var(--s-4)">{noIncluido.paragraphs[0]}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band cta-band--v4 bg-brand on-dark" aria-labelledby="cta-title" data-hide-action-bar>
+      <div class="container cta-band__inner">
+        <div>
+          <h2 id="cta-title">{ctaBanner.heading}</h2>
+          <div class="btn-row btn-row--stack" style="margin-top:var(--s-6)">
+            <Button href="contacto/" variant="primary">{home.hero_ctas[0]}</Button>
+          </div>
+        </div>
+        <Still
+          objects={[
+            { src: grapefruit, w: '44%', right: '4%', top: '4%', rotate: 14 },
+            { src: lemonB, w: '38%', left: '10%', bottom: '0', rotate: -12 },
+          ]}
+        />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

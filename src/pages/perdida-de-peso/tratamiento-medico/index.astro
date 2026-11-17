@@ -1,0 +1,141 @@
+---
+// Medical treatment page: calm register, no food and no Still (DESIGN §2, R20).
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import Button from '../../../components/Button.astro';
+import Fiche from '../../../components/Fiche.astro';
+import Icon from '../../../components/Icon.astro';
+import Note from '../../../components/Note.astro';
+import { services } from '../../../lib/nav';
+import medical from '../../../data/copy/perdida-de-peso-con-apoyo-medico.json';
+import home from '../../../data/copy/home.json';
+
+const section = (id: string) => medical.sections.find(s => s.id === id)!;
+const papel = section('papel-farmacologia');
+const cuando = section('cuando-puede-ser-interesante');
+const incluir = section('que-puede-incluir-tratamiento');
+const importante = section('importante');
+
+// Roles (R4, same split rule as T04 H3): the three sentences of the home medical disclaimer.
+const text = home.sections.find(s => s.id === 'medical-treatment')!.disclaimers[0].text;
+const parts = text.split(/(?<=\.)\s+/);
+const ok = parts.length === 3;
+// Microcopy §4.3: roles = Daniel / La profesional médica.
+const roles = ok ? [
+  { who: 'Daniel', icon: 'clipboard-list', text: parts[0] },
+  { who: 'La profesional médica', icon: 'stethoscope', text: parts[1] },
+] : [];
+const legalNote = ok ? parts[2] : text;
+
+// Microcopy §4.3: fiche.mode, fiche.med.* (each "dt → dd").
+const fiche = [
+  { dt: 'Modalidad', dd: '100% online' },
+  ...[
+    'Nutrición y hábitos → Daniel',
+    'Valoración y prescripción → La profesional médica',
+    'Medicación → No incluida en el programa',
+  ].map(row => {
+    const [dt, dd] = row.split(' → ');
+    return { dt, dd };
+  }),
+];
+
+const perdidaCrumb = services.find(s => s.slug === 'perdida-de-peso')!;
+const medicoCrumb = services.find(s => s.slug === 'medico')!;
+const ctaPrimary = medical.hero_ctas[1];
+const ctaSecondary = medical.hero_ctas[0];
+---
+<BaseLayout
+  title="Pérdida de peso con tratamiento médico · Daniel Clemente"
+  description="Tratamiento médico cuando la profesional médica lo indique y prescriba, siempre con seguimiento nutricional y de hábitos."
+  ogSlug="medico"
+  current="servicios"
+>
+  <main id="main">
+    <section class="page-hero page-hero--v4 bg-medical svc-medical" aria-labelledby="ph-title">
+      <div class="container">
+        <Breadcrumb items={[
+          { label: 'Inicio' },
+          { label: perdidaCrumb.title, href: perdidaCrumb.path },
+          { label: medicoCrumb.short },
+        ]} />
+        <div class="page-hero__grid">
+          <div>
+            <div style="margin-top:var(--s-5)">
+              <Note note={{ text: importante.disclaimers[0].text, kind: 'editorial' }} />
+            </div>
+            <h1 id="ph-title" style="margin-top:var(--s-4)">{medical.h1}</h1>
+            <p class="lead">{medical.lead}</p>
+            <div class="btn-row btn-row--stack" data-action-bar-trigger>
+              <Button href="contacto/?objetivo=medico" variant="primary">{ctaPrimary}</Button>
+              <Button href="programas/#programa-b" variant="secondary">{ctaSecondary}</Button>
+            </div>
+          </div>
+          <Fiche title={medical.h1} icon="stethoscope" rows={fiche} />
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-paper" aria-labelledby="role-title">
+      <div class="container">
+        <div class="split split--5-7">
+          <div class="sec-head sec-head--stack">
+            <h2 id="role-title">{papel.heading}</h2>
+          </div>
+          <div class="callout">
+            {ok && (
+              <table class="roles">
+                <tbody>
+                  {roles.map(r => (
+                    <tr>
+                      <th scope="row"><span><Icon name={r.icon} />{r.who}</span></th>
+                      <td>{r.text}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+            <div class:list={[ok && 'callout__foot']}>
+              <Note note={{ text: legalNote, kind: 'legal' }} />
+            </div>
+          </div>
+        </div>
+        <div class="prose" style="margin-top:var(--s-6)">
+          {papel.paragraphs.map(p => <p>{p}</p>)}
+          <Note note={{ text: papel.disclaimers[0].text, kind: 'legal' }} />
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-surface">
+      <div class="container split">
+        <div class="panel">
+          <h2>{cuando.heading}</h2>
+          <ul class="checklist" style="margin-top:var(--s-5)">
+            {cuando.items.map(it => <li><Icon name="check" />{it.text}</li>)}
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>{incluir.heading}</h2>
+          <ul class="checklist" style="margin-top:var(--s-5)">
+            {incluir.items.map(it => <li><Icon name="check" />{it.text}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--tight section bg-paper" aria-labelledby="imp-title" data-hide-action-bar>
+      <div class="container--narrow">
+        <div class="important">
+          <h2 class="important__title" id="imp-title"><Icon name="shield-check" class="icon--l" />{importante.heading}</h2>
+          <p>{importante.paragraphs[0]}</p>
+          <Note note={{ text: importante.paragraphs[1], kind: 'legal' }} />
+        </div>
+        <div class="btn-row btn-row--stack" style="margin-top:var(--s-6);justify-content:center">
+          <Button href="contacto/?objetivo=medico" variant="primary">{ctaPrimary}</Button>
+          <Button href="programas/#programa-b" variant="secondary">{ctaSecondary}</Button>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
