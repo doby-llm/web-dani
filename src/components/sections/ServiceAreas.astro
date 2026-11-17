@@ -1,0 +1,15 @@
+---
+import Icon from '../Icon.astro';
+
+// Tint comes from the enclosing section's svc-* class (--svc); no tint or fg props.
+interface Props { areas: { title: string; text: string; icon: string }[] }
+const { areas } = Astro.props;
+---
+<ul class="areas">
+  {areas.map(a => (
+    <li class="area">
+      <span class="icon-badge"><Icon name={a.icon} /></span>
+      <div><h3>{a.title}</h3><p>{a.text}</p></div>
+    </li>
+  ))}
+</ul>

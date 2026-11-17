@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Button from '../../components/Button.astro';
+import Icon from '../../components/Icon.astro';
+import Still from '../../components/Still.astro';
+import { accent } from '../../lib/text';
+import { url } from '../../lib/url';
+import avocado from '../../assets/img/avocado.png';
+import grapefruit from '../../assets/img/grapefruit.png';
+import lemonC from '../../assets/img/lemon-c.png';
+import servicios from '../../data/copy/servicios.json';
+import perdida from '../../data/copy/perdida-de-peso.json';
+
+// Row order = sections[0].items: perdida, deportiva, clínica (SPEC §3).
+const rows = [
+  { svc: 'svc-weight', icon: 'scale', path: 'perdida-de-peso/', food: grapefruit },
+  { svc: 'svc-sport', icon: 'dumbbell', path: 'nutricion-deportiva/', food: lemonC },
+  { svc: 'svc-clinic', icon: 'heart-pulse', path: 'nutricion-clinica/', food: avocado },
+];
+const items = servicios.sections[0].items;
+const choose = servicios.sections[1];
+const medico = perdida.sections.find(s => s.id === 'tratamiento-medico')!;
+---
+<BaseLayout title="Servicios de nutrición online · Daniel Clemente" description="Pérdida de peso, tratamiento médico coordinado, nutrición deportiva y nutrición clínica online. Elige tu objetivo." ogSlug="servicios" current="servicios">
+  <main id="main">
+    <section class="page-hero page-hero--v4 bg-tint" aria-labelledby="ph-title">
+      <div class="container">
+        <Breadcrumb items={[{ label: 'Inicio', href: '' }, { label: 'Servicios' }]} />
+        <div class="page-hero__grid">
+          <div>
+            <h1 id="ph-title" set:html={accent(servicios.h1, 3)}></h1>
+            <p class="lead">{servicios.lead}</p>
+            <div class="btn-row btn-row--stack" data-action-bar-trigger>
+              <Button href="contacto/" variant="primary">{servicios.hero_ctas[0]}</Button>
+              <Button href="programas/" variant="secondary">{servicios.hero_ctas[1]}</Button>
+            </div>
+          </div>
+          <div class="page-hero__aside">
+            <Still
+              settle
+              objects={[
+                { src: avocado, w: '48%', right: '4%', top: '2%', rotate: -14 },
+                { src: grapefruit, w: '40%', left: '6%', bottom: '0', rotate: 10 },
+              ]}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-paper" aria-labelledby="servicios-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="servicios-title">Servicios</h2>
+        <ul class="svc-index">
+          {items.map((it, i) => (
+            <li class:list={['svc-row', rows[i].svc]}>
+              <span class="icon-badge"><Icon name={rows[i].icon} /></span>
+              <h3><a href={url(rows[i].path)}>{it.title}</a></h3>
+              <p>{it.text}</p>
+              <span class="svc-row__food" aria-hidden="true"><Image src={rows[i].food} alt="" height={112} /></span>
+              <span class="svc-row__go" aria-hidden="true"><Icon name="arrow-right" /></span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section bg-surface" aria-labelledby="elegir-title">
+      <div class="container split split--5-7">
+        <div class="sec-head sec-head--stack">
+          <h2 id="elegir-title">{choose.heading}</h2>
+        </div>
+        <div>
+          <div class="prose">
+            <p>{choose.paragraphs[0]}</p>
+          </div>
+          <p style="margin-top:var(--s-5)"><a class="link-arrow" href={url('perdida-de-peso/tratamiento-medico/')}>{medico.ctas[0]} <Icon name="arrow-right" /></a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  /* Index hero: the still life sits in flow, not in the absolute corner used by the service heroes. */
+  .page-hero__aside :global(.still) { position: relative; inset: auto; width: 100%; height: 14rem; }
+</style>
