@@ -1,0 +1,33 @@
+---
+import Icon from './Icon.astro';
+import { services } from '../lib/nav';
+import { url } from '../lib/url';
+import home from '../data/copy/home.json';
+
+interface Props { current?: boolean }
+const { current = false } = Astro.props;
+
+// Descriptions are read from the home copy, never typed here.
+const objectives = home.sections.find(s => s.id === 'objectives')!.items!;
+const medical = home.sections.find(s => s.id === 'medical-treatment')!.paragraphs![0];
+// "No es una solución aislada…": the sentence after the first one of the medical paragraph.
+const medicalDesc = medical.slice(medical.indexOf('. ') + 2);
+const descriptions: Record<string, string> = {
+  weight: objectives[0].text,
+  medical: medicalDesc,
+  sport: objectives[1].text,
+  clinic: objectives[2].text,
+};
+---
+<div class="nav-menu">
+  <button class="nav__link" type="button" aria-expanded="false" aria-controls="services-panel" data-current={current ? 'true' : undefined}>Servicios <Icon name="chevron-down" class="icon--s" /></button>
+  <div class="nav-menu__panel" id="services-panel" hidden>
+    {services.map(s => (
+      <a class="nav-menu__item" href={url(s.path)}>
+        <span class="icon-badge"><Icon name={s.icon} /></span>
+        <span class="nav-menu__title">{s.title}</span>
+        <span class="nav-menu__desc">{descriptions[s.svc]}</span>
+      </a>
+    ))}
+  </div>
+</div>

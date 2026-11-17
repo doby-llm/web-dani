@@ -1,0 +1,45 @@
+---
+// The three ported sheets are imported here. global.css does not exist (T01 did not create it).
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/components.css';
+import serifFont from '../assets/fonts/fraunces-web.woff2?url';
+import sansFont from '../assets/fonts/public-sans-web.woff2?url';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ActionBar from '../components/ActionBar.astro';
+import MenuSheet from '../components/MenuSheet.astro';
+import { PROVISIONAL } from '../lib/env';
+import shared from '../data/copy/shared.json';
+
+interface Props {
+  title: string;
+  description: string;
+  ogSlug: string;
+  current?: 'como' | 'programas' | 'sobre' | 'blog' | 'servicios';
+  hideActionBar?: boolean;
+  article?: { published?: string };
+}
+const { title, description, current, hideActionBar = false } = Astro.props;
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preload" href={serifFont} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={sansFont} as="font" type="font/woff2" crossorigin />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{shared.skip_link}</a>
+    {PROVISIONAL && <p class="site-notice">{shared.site_notice}</p>}
+    <Header current={current} />
+    <slot />
+    <Footer />
+    <ActionBar hidden={hideActionBar} />
+    <MenuSheet />
+    <script src="../scripts/site.js"></script>
+  </body>
+</html>

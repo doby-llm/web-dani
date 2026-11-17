@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import Still from '../components/Still.astro';
+import lemonA from '../assets/img/lemon-a.png';
+import lemonC from '../assets/img/lemon-c.png';
+import shared from '../data/copy/shared.json';
+
+// Microcopy §4.3: 404.h1, 404.lead, 404.cta1 (Volver al inicio); the second button is the nav CTA.
+const h1 = 'Página no encontrada';
+const lead = 'Puede que el enlace haya cambiado. Vuelve al inicio o cuéntame tu objetivo.';
+---
+<BaseLayout title={`${h1} · Daniel Clemente`} description={lead} ogSlug="404" hideActionBar>
+  <main id="main">
+    <section class="page-hero page-hero--v4 bg-sport" aria-labelledby="ph-title">
+      <div class="container">
+        <div class="page-hero__grid">
+          <div>
+            <h1 id="ph-title">{h1}</h1>
+            <p class="lead">{lead}</p>
+            <div class="btn-row btn-row--stack">
+              <Button href="" variant="primary">Volver al inicio</Button>
+              <Button href="contacto/" variant="secondary">{shared.header.nav_cta}</Button>
+            </div>
+          </div>
+          <div class="page-hero__aside">
+            <Still
+              settle
+              style="position:relative;inset:auto;width:100%;height:14rem"
+              objects={[
+                { src: lemonC, w: '46%', right: '2%', top: '4%', rotate: -12 },
+                { src: lemonA, w: '36%', left: '8%', bottom: '2%', rotate: 12 },
+              ]}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

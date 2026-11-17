@@ -1,16 +1,12 @@
 ---
-// Placeholder until T04. Imports the three ported sheets directly: src/styles/global.css is not in T01's file list.
-import '../styles/tokens.css';
-import '../styles/base.css';
-import '../styles/components.css';
+// Placeholder until T04. Uses BaseLayout; the page sheets are imported there.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import home from '../data/copy/home.json';
 ---
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hola</title>
-  </head>
-  <body>
+<BaseLayout title={home.meta.title} description={home.meta.description} ogSlug="home">
+  <main id="main">
     <h1>Hola</h1>
-  </body>
-</html>
+    <div data-action-bar-trigger aria-hidden="true" style="height:1px"></div>
+    <div aria-hidden="true" style="min-height:150vh"></div>
+  </main>
+</BaseLayout>

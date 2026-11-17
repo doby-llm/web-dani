@@ -1,0 +1,26 @@
+---
+import Icon from './Icon.astro';
+import ServicesMenu from './ServicesMenu.astro';
+import { primary } from '../lib/nav';
+import { url } from '../lib/url';
+import shared from '../data/copy/shared.json';
+
+interface Props { current?: 'como' | 'programas' | 'sobre' | 'blog' | 'servicios' }
+const { current } = Astro.props;
+---
+<header class="site-header" data-scrolled="false">
+  <div class="container site-header__inner">
+    <a class="brand" href={url('')}>
+      <span class="brand__mark" aria-hidden="true">DC</span>
+      <span class="brand__text"><span class="brand__name">{shared.header.brand_name}</span><span class="brand__role">{shared.header.brand_role}</span></span>
+    </a>
+    <nav class="nav" aria-label={shared.header.nav_aria}>
+      <ServicesMenu current={current === 'servicios'} />
+      {primary.map(p => (
+        <a class="nav__link" href={url(p.path)} aria-current={current === p.key ? 'page' : undefined}>{p.label}</a>
+      ))}
+      <a class="btn btn--primary nav__cta" href={url('contacto/')}>{shared.header.nav_cta}</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-sheet"><Icon name="menu" />Menú</button>
+  </div>
+</header>

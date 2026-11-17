@@ -1,0 +1,7 @@
+---
+import { url } from '../lib/url';
+
+interface Props { name: string; class?: string; label?: string }
+const { name, class: cls, label } = Astro.props;
+---
+<svg class:list={['icon', cls]} aria-hidden={label ? undefined : 'true'} role={label ? 'img' : undefined} aria-label={label}><use href={url('icons.svg') + '#i-' + name}/></svg>
