@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Button from '../../components/Button.astro';
+import Note from '../../components/Note.astro';
+import avatar from '../../assets/img/avatar.webp';
+import blog from '../../data/copy/blog.json';
+import home from '../../data/copy/home.json';
+
+// Category label (SPEC §4.3 cat.*) and hero ground (R9/R16). Same map as blog/index.astro.
+const categories = {
+  'perdida-de-peso': { label: 'Pérdida de peso', ground: 'bg-weight' },
+  deportiva: { label: 'Nutrición deportiva', ground: 'bg-sport' },
+  clinica: { label: 'Nutrición clínica', ground: 'bg-clinic' },
+  habitos: { label: 'Hábitos', ground: 'bg-weight' },
+};
+// Microcopy (SPEC §4.3): toc.title, article.read.
+const tocTitle = 'En este artículo';
+const readTime = (n: number) => `${n} min de lectura`;
+const dateFmt = new Intl.DateTimeFormat('es-ES', { dateStyle: 'long' });
+
+// Drafts are never built (draft: true is the default).
+export async function getStaticPaths() {
+  const entries = await getCollection('blog', ({ data }) => !data.draft);
+  return entries.map(entry => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+const toc = headings.filter(h => h.depth === 2);
+const { label, ground } = categories[entry.data.category];
+
+// Editorial note: the first teaser's disclaimer, shown only behind SHOW_EDITORIAL (Planner note 7).
+const idea = blog.sections.find(s => s.id === 'ideas')!.items[0];
+const about = home.sections.find(s => s.id === 'about')!;
+const finalCta = home.sections.find(s => s.id === 'final-cta')!;
+---
+<BaseLayout title={`${entry.data.title} · Daniel Clemente`} description={entry.data.description} ogSlug={entry.id} current="blog" article={{ published: entry.data.published.toISOString(), modified: entry.data.updated?.toISOString() }}>
+  <main id="main">
+    <article>
+      <header class={`page-hero page-hero--v4 ${ground}`}>
+        <div class="container">
+          <Breadcrumb items={[{ label: 'Inicio', href: '' }, { label: 'Blog', href: 'blog/' }, { label: entry.data.title }]} />
+          <div class="article-head">
+            <span class="badge badge--brand" style="margin-top:var(--s-5)">{label}</span>
+            <h1>{entry.data.title}</h1>
+            <p class="lead" style="max-width:52ch">{entry.data.description}</p>
+            <div class="article-meta">
+              <span>Daniel Clemente</span>
+              <span><time datetime={entry.data.published.toISOString()}>{dateFmt.format(entry.data.published)}</time></span>
+              <span>{readTime(entry.data.readingMinutes)}</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="section bg-paper">
+        <div class="container article-layout">
+          <div class="article-body prose">
+            <Note note={{ text: idea.disclaimers[0].text, kind: 'editorial' }} boxed />
+            <Content />
+            <div class="author-box" style="margin-top:var(--s-7)">
+              <Image src={avatar} widths={[128, 256]} sizes="4rem" alt="" />
+              <div>
+                <strong>Daniel Clemente</strong>
+                <p>{about.paragraphs![0]}</p>
+              </div>
+            </div>
+          </div>
+          {toc.length > 0 && (
+            <nav class="toc" aria-label={tocTitle}>
+              <strong>{tocTitle}</strong>
+              <ol>
+                {toc.map((h, i) => (
+                  <li><a href={`#${h.slug}`} aria-current={i === 0 ? 'true' : undefined}>{h.text}</a></li>
+                ))}
+              </ol>
+            </nav>
+          )}
+        </div>
+      </section>
+    </article>
+
+    <section class="section bg-surface" aria-labelledby="cta-title" data-hide-action-bar>
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="cta-title">{finalCta.heading}</h2>
+          <div>
+            <p>{finalCta.paragraphs![0]}</p>
+            <div class="btn-row btn-row--stack" data-action-bar-trigger style="margin-top:var(--s-5)">
+              <Button href="contacto/" variant="primary">{finalCta.ctas![0]}</Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
