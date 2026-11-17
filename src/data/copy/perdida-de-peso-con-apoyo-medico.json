@@ -1,0 +1,81 @@
+{
+  "page": "perdida-de-peso-con-apoyo-medico",
+  "meta": {
+    "title": "Pérdida de peso con tratamiento médico | Daniel Clemente",
+    "description": "Información provisional sobre pérdida de peso con tratamiento médico, cuando esté indicado y prescrito por una profesional médica, acompañado de seguimiento nutricional y de hábitos."
+  },
+  "h1": "Pérdida de peso con tratamiento médico",
+  "lead": "Una opción para valorar en casos seleccionados, cuando la profesional médica considera indicado un tratamiento farmacológico conforme a la situación clínica, la ficha técnica aplicable y la normativa vigente. Se integra con seguimiento nutricional y de hábitos.",
+  "hero_ctas": [
+    "Ver programa",
+    "Consultar"
+  ],
+  "sections": [
+    {
+      "id": "papel-farmacologia",
+      "heading": "Una herramienta dentro de un abordaje integral",
+      "level": "h2",
+      "paragraphs": [
+        "El tratamiento farmacológico no se plantea como una solución aislada ni como una opción automática para cualquier persona. Después de una valoración médica individualizada, la profesional médica puede decidir si procede incorporarlo al abordaje y qué seguimiento requiere.",
+        "Cuando está indicado y prescrito, se acompaña de un plan nutricional personalizado y de trabajo sobre hábitos. El objetivo del seguimiento nutricional es ayudar a que el proceso no dependa únicamente de la medicación y favorecer cambios que puedan mantenerse en el tiempo.",
+        "En algunos casos puede valorarse un medicamento inyectable que actúe sobre la vía del receptor GLP-1. No se recomienda un medicamento concreto ni se ofrecen combinaciones farmacológicas: la profesional médica es quien valora, indica, prescribe y supervisa el tratamiento que corresponda."
+      ],
+      "disclaimers": [
+        {
+          "text": "Esta información es general y provisional; no sustituye una consulta médica ni constituye una recomendación farmacológica.",
+          "kind": "legal"
+        }
+      ]
+    },
+    {
+      "id": "cuando-puede-ser-interesante",
+      "heading": "¿Cuándo puede ser interesante?",
+      "level": "h2",
+      "items": [
+        {
+          "text": "Cuando la situación requiere una valoración profesional adicional."
+        },
+        {
+          "text": "Cuando conviene coordinar el seguimiento nutricional con seguimiento médico."
+        },
+        {
+          "text": "Cuando el objetivo y el contexto deben revisarse de manera individual."
+        }
+      ]
+    },
+    {
+      "id": "que-puede-incluir-tratamiento",
+      "heading": "¿Qué puede incluir el tratamiento?",
+      "level": "h2",
+      "items": [
+        {
+          "text": "Seguimiento nutricional personalizado."
+        },
+        {
+          "text": "Valoración médica inicial y seguimiento médico cuando corresponda."
+        },
+        {
+          "text": "Tratamiento farmacológico autorizado, incluidos cuando proceda medicamentos inyectables relacionados con la vía GLP-1, siempre que la profesional médica lo indique y prescriba."
+        },
+        {
+          "text": "Seguimiento de evolución, hábitos y adherencia."
+        }
+      ]
+    },
+    {
+      "id": "importante",
+      "heading": "Importante",
+      "level": "h2",
+      "paragraphs": [
+        "La indicación y prescripción del tratamiento farmacológico corresponden a la profesional médica, que deberá valorar cada caso conforme a la ficha técnica del medicamento y a la normativa aplicable en España. El tratamiento se utilizará bajo seguimiento médico y acompañado del seguimiento nutricional y de hábitos.",
+        "Esta web no vende ni dispensa medicamentos, la medicación no está incluida en el precio del programa y no se inicia ni modifica desde el seguimiento nutricional."
+      ],
+      "disclaimers": [
+        {
+          "text": "Bloque médico pendiente de validación profesional, legal y comercial.",
+          "kind": "editorial"
+        }
+      ]
+    }
+  ]
+}

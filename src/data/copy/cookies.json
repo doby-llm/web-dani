@@ -1,0 +1,27 @@
+{
+  "page": "cookies",
+  "meta": {
+    "title": "Cookies en preparación | Daniel Clemente",
+    "description": "Política de cookies provisional sin analytics ni scripts externos configurados, pendiente de validación legal."
+  },
+  "h1": "Política de cookies en preparación",
+  "lead": "Esta web no usa cookies ni herramientas de analítica. Si eso cambia, esta página lo explicará y te pedirá consentimiento.",
+  "hero_ctas": [
+    "Cuéntame tu objetivo",
+    "Ver programas"
+  ],
+  "sections": [
+    {
+      "id": "estado-documento",
+      "disclaimers": [
+        {
+          "text": "Documento legal provisional, pendiente de preparación y revisión.",
+          "kind": "provisional"
+        }
+      ],
+      "ctas": [
+        "Volver a contacto"
+      ]
+    }
+  ]
+}

@@ -10,8 +10,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "copy": "node scripts/build-copy.mjs",
     "check": "npm run check:copy",
-    "check:copy": "echo ok",
+    "check:copy": "node scripts/build-copy.mjs --check",
     "shots": "node scripts/shots.mjs"
   },
   "dependencies": {

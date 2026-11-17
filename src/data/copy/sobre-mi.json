@@ -1,0 +1,65 @@
+{
+  "page": "sobre-mi",
+  "meta": {
+    "title": "Sobre mí | Daniel Clemente Nutricionista",
+    "description": "Biografía profesional de Daniel Clemente, nutricionista, con formación, experiencia, docencia y enfoque basado en evidencia."
+  },
+  "h1": "Daniel Clemente, nutricionista",
+  "lead": "Una forma de trabajar cercana, personalizada y basada en evidencia científica, contraria a dietas milagro y promesas no fundamentadas.",
+  "hero_ctas": [
+    "Cuéntame tu objetivo",
+    "Ver programas"
+  ],
+  "sections": [
+    {
+      "id": "formacion",
+      "heading": "Formación",
+      "level": "h2",
+      "items": [
+        {
+          "text": "Graduado en nutrición por la UEM."
+        },
+        {
+          "text": "FP superior de dietética."
+        },
+        {
+          "text": "Máster en endocrinología y nutrición clínica por la UCAM."
+        }
+      ],
+      "disclaimers": [
+        {
+          "text": "Denominación oficial pendiente de validar antes de publicación comercial.",
+          "kind": "editorial"
+        }
+      ],
+      "images": [
+        {
+          "alt": "Daniel Clemente sentado frente a un portátil",
+          "src": "assets/daniel-about.png"
+        }
+      ]
+    },
+    {
+      "id": "experiencia",
+      "heading": "Experiencia",
+      "level": "h2",
+      "paragraphs": [
+        "Más de 8 años con pacientes online, especialmente deportistas y composición corporal. Más de 3 años en consulta clínica presencial de obesidad, cirugía bariátrica y pérdida de peso."
+      ]
+    },
+    {
+      "id": "docencia-enfoque",
+      "heading": "Docencia y enfoque",
+      "level": "h2",
+      "paragraphs": [
+        "Profesor de un máster universitario de alimentación, salud y deporte. Siempre utilizaré evidencia científica para todos los tratamientos, con personalización y rechazo de dietas milagro."
+      ],
+      "disclaimers": [
+        {
+          "text": "Experiencia, docencia y formulación editorial pendientes de validación.",
+          "kind": "editorial"
+        }
+      ]
+    }
+  ]
+}

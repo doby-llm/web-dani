@@ -1,0 +1,60 @@
+{
+  "page": "blog",
+  "meta": {
+    "title": "Blog provisional | Daniel Clemente",
+    "description": "Índice editorial provisional con ideas educativas sobre GLP-1, proteína, colesterol y mantenimiento de pérdida de peso."
+  },
+  "h1": "Artículos en preparación",
+  "lead": "Próximos artículos educativos, siempre revisados desde la evidencia científica.",
+  "hero_ctas": [
+    "Cuéntame tu objetivo",
+    "Ver programas"
+  ],
+  "sections": [
+    {
+      "id": "ideas",
+      "items": [
+        {
+          "title": "GLP-1 y pérdida de peso",
+          "text": "Una explicación clara para entender el contexto y hablarlo con profesionales.",
+          "disclaimers": [
+            {
+              "text": "Contenido educativo provisional, pendiente de redacción y revisión.",
+              "kind": "editorial"
+            }
+          ]
+        },
+        {
+          "title": "Proteína y ganancia de masa muscular",
+          "text": "Claves para orientar tu alimentación cuando buscas mejorar tu composición corporal.",
+          "disclaimers": [
+            {
+              "text": "Contenido educativo provisional, pendiente de redacción y revisión.",
+              "kind": "editorial"
+            }
+          ]
+        },
+        {
+          "title": "Colesterol, alimentación y hábitos",
+          "text": "Hábitos alimentarios en torno al colesterol.",
+          "disclaimers": [
+            {
+              "text": "Contenido educativo provisional, pendiente de redacción y revisión.",
+              "kind": "editorial"
+            }
+          ]
+        },
+        {
+          "title": "Cómo mantener la pérdida de peso",
+          "text": "Hábitos y decisiones sostenibles más allá de una dieta puntual.",
+          "disclaimers": [
+            {
+              "text": "Contenido educativo provisional, pendiente de redacción y revisión.",
+              "kind": "editorial"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

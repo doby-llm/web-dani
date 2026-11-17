@@ -1,0 +1,57 @@
+{
+  "page": "perdida-de-peso",
+  "meta": {
+    "title": "Programa de pérdida de peso | Daniel Clemente",
+    "description": "Programa de pérdida de peso online con un enfoque integral, personalizado y basado en evidencia científica."
+  },
+  "h1": "Pérdida de peso con un enfoque integral y personalizado",
+  "lead": "Un acompañamiento completo para ayudarte a perder grasa, mejorar tus hábitos y trabajar una composición corporal sostenible.",
+  "hero_ctas": [
+    "Ver programas",
+    "Quiero empezar"
+  ],
+  "sections": [
+    {
+      "id": "que-incluye",
+      "heading": "¿Qué incluye?",
+      "level": "h2",
+      "items": [
+        {
+          "text": "Plan nutricional personalizado."
+        },
+        {
+          "text": "Excel 365 con recetas y menú."
+        },
+        {
+          "text": "Seguimiento semanal y acompañamiento por WhatsApp."
+        },
+        {
+          "text": "Videollamada mensual de aproximadamente 20 minutos."
+        },
+        {
+          "text": "Ajustes según la evolución y la vida real."
+        }
+      ]
+    },
+    {
+      "id": "proceso-acompanado",
+      "heading": "Un proceso acompañado",
+      "level": "h2",
+      "paragraphs": [
+        "La pérdida de peso se plantea como un proceso gradual y personalizado, no como una dieta milagro ni como una promesa de resultados.",
+        "El tratamiento debe adaptarse a tu objetivo, contexto, hábitos y evolución, siempre desde la evidencia científica."
+      ]
+    },
+    {
+      "id": "tratamiento-medico",
+      "heading": "¿Y si necesitas tratamiento médico?",
+      "level": "h2",
+      "paragraphs": [
+        "En algunos casos seleccionados, la profesional médica puede valorar si un tratamiento farmacológico autorizado forma parte del abordaje. No es una solución aislada: se integra con seguimiento nutricional y de hábitos, y la indicación y prescripción corresponden a la profesional médica."
+      ],
+      "ctas": [
+        "Ver tratamiento médico"
+      ]
+    }
+  ]
+}
