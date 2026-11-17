@@ -1,0 +1,27 @@
+{
+  "page": "aviso-legal",
+  "meta": {
+    "title": "Aviso legal en preparación | Daniel Clemente",
+    "description": "Placeholder honesto del aviso legal de Daniel Clemente Nutricionista, pendiente de revisión profesional."
+  },
+  "h1": "Aviso legal en preparación",
+  "lead": "Estamos preparando el aviso legal. Aquí aparecerán la titularidad, los datos identificativos, el contacto y las condiciones de uso de esta web.",
+  "hero_ctas": [
+    "Cuéntame tu objetivo",
+    "Ver programas"
+  ],
+  "sections": [
+    {
+      "id": "estado-documento",
+      "disclaimers": [
+        {
+          "text": "Documento legal provisional, pendiente de preparación y revisión.",
+          "kind": "provisional"
+        }
+      ],
+      "ctas": [
+        "Volver a contacto"
+      ]
+    }
+  ]
+}

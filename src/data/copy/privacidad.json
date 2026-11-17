@@ -1,0 +1,27 @@
+{
+  "page": "privacidad",
+  "meta": {
+    "title": "Privacidad en preparación | Daniel Clemente",
+    "description": "Política de privacidad provisional para una web sin backend ni almacenamiento, pendiente de revisión legal."
+  },
+  "h1": "Política de privacidad en preparación",
+  "lead": "El formulario de contacto todavía no envía ni guarda datos. Antes de activarlo se publicará aquí la política completa: responsable, finalidad, base jurídica, conservación y tus derechos.",
+  "hero_ctas": [
+    "Cuéntame tu objetivo",
+    "Ver programas"
+  ],
+  "sections": [
+    {
+      "id": "estado-documento",
+      "disclaimers": [
+        {
+          "text": "Documento legal provisional, pendiente de preparación y revisión.",
+          "kind": "provisional"
+        }
+      ],
+      "ctas": [
+        "Volver a contacto"
+      ]
+    }
+  ]
+}

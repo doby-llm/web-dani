@@ -1,0 +1,63 @@
+{
+  "skip_link": "Saltar al contenido",
+  "site_notice": "Web en preparación comercial · Contenido pendiente de validación",
+  "header": {
+    "brand_name": "DANIEL CLEMENTE",
+    "brand_role": "NUTRICIONISTA",
+    "menu_toggle_aria": "Abrir menú",
+    "nav_aria": "Navegación principal",
+    "nav": [
+      "Inicio",
+      "Servicios",
+      "Cómo funciona",
+      "Programas",
+      "Sobre mí",
+      "Blog",
+      "FAQ",
+      "Contacto"
+    ],
+    "nav_cta": "Contacto"
+  },
+  "footer": {
+    "brand_name": "DANIEL CLEMENTE",
+    "brand_role": "NUTRICIONISTA",
+    "tagline": "Nutrición online personalizada, con evidencia científica, cercanía y límites claros.",
+    "columns": [
+      {
+        "heading": "Servicios",
+        "links": [
+          "Pérdida de peso",
+          "Nutrición deportiva",
+          "Nutrición clínica"
+        ]
+      },
+      {
+        "heading": "Información",
+        "links": [
+          "Cómo funciona",
+          "Programas",
+          "Sobre mí",
+          "Blog",
+          "FAQ"
+        ]
+      },
+      {
+        "heading": "Contacto",
+        "links": [
+          "Contacto",
+          "Aviso legal",
+          "Privacidad",
+          "Cookies"
+        ]
+      }
+    ],
+    "bottom": [
+      "© {año} Daniel Clemente Nutricionista"
+    ]
+  },
+  "floating": {
+    "mobile_contact_bar": "Cuéntame tu objetivo",
+    "contact_float_label": "Contacto",
+    "contact_float_aria": "Ir a contacto"
+  }
+}

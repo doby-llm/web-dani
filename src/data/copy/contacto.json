@@ -1,0 +1,101 @@
+{
+  "page": "contacto",
+  "meta": {
+    "title": "Contacto | Daniel Clemente Nutricionista",
+    "description": "Canales de contacto pendientes de confirmación y formulario demo que no envía ni almacena mensajes."
+  },
+  "h1": "Cuéntame tu objetivo",
+  "lead": "WhatsApp, email y reservas están pendientes de confirmación. Mientras tanto, este formulario es una demostración: no envía ni guarda nada, y no debe incluir datos de salud.",
+  "hero_ctas": [
+    "Cuéntame tu objetivo",
+    "Ver programas"
+  ],
+  "sections": [
+    {
+      "id": "canales",
+      "images": [
+        {
+          "alt": "Icono de WhatsApp",
+          "src": "assets/whatsapp-glyph.svg"
+        }
+      ],
+      "items": [
+        {
+          "title": "WhatsApp",
+          "text": "Pendiente de confirmación."
+        },
+        {
+          "title": "Email",
+          "text": "Pendiente de confirmación."
+        },
+        {
+          "title": "Reserva",
+          "text": "Pendiente de definición."
+        }
+      ]
+    },
+    {
+      "id": "formulario",
+      "heading": "Solicitud informativa",
+      "level": "h2",
+      "disclaimers": [
+        {
+          "text": "No introduzcas patologías, medicación, diagnósticos, analíticas ni otros datos sanitarios. Este formulario no se envía ni se almacena.",
+          "kind": "legal"
+        }
+      ]
+    }
+  ],
+  "form": {
+    "fields": [
+      {
+        "label": "Nombre *",
+        "placeholder": "Tu nombre",
+        "type": "text",
+        "required": true,
+        "autocomplete": "name"
+      },
+      {
+        "label": "Email *",
+        "placeholder": "tu@email.com",
+        "type": "email",
+        "required": true,
+        "autocomplete": "email"
+      },
+      {
+        "label": "WhatsApp",
+        "placeholder": "Tu número (opcional)",
+        "type": "tel",
+        "required": false,
+        "autocomplete": "tel"
+      },
+      {
+        "label": "Objetivo",
+        "placeholder": "Selecciona una opción",
+        "type": "select",
+        "required": false,
+        "options": [
+          "Pérdida de peso",
+          "Reducción de grasa",
+          "Mejora de composición corporal",
+          "Ganancia de masa muscular",
+          "Rendimiento o recuperación deportiva",
+          "Apoyo nutricional clínico"
+        ]
+      },
+      {
+        "label": "Mensaje",
+        "placeholder": "Describe tu objetivo sin incluir datos sanitarios",
+        "type": "textarea",
+        "required": false
+      }
+    ],
+    "submit": "Enviar",
+    "notes": [
+      {
+        "text": "Demostración: este formulario todavía no envía ni guarda ningún dato.",
+        "kind": "provisional"
+      }
+    ]
+  }
+}
