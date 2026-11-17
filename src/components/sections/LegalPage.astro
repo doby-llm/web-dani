@@ -1,0 +1,33 @@
+---
+import Breadcrumb from '../Breadcrumb.astro';
+import Icon from '../Icon.astro';
+import Note from '../Note.astro';
+import { accent } from '../../lib/text';
+import { url } from '../../lib/url';
+import avisoLegal from '../../data/copy/aviso-legal.json';
+import privacidad from '../../data/copy/privacidad.json';
+import cookies from '../../data/copy/cookies.json';
+
+// `crumb` = footer label of the page (R10). The copy only states "en preparación" wording.
+interface Props { copyKey: 'aviso-legal' | 'privacidad' | 'cookies'; crumb: string }
+const { copyKey, crumb } = Astro.props;
+const pages = { 'aviso-legal': avisoLegal, privacidad, cookies };
+const page = pages[copyKey];
+const section = page.sections[0];
+---
+<main id="main">
+  <section class="page-hero page-hero--v4" aria-labelledby="ph-title">
+    <div class="container">
+      <Breadcrumb items={[{ label: 'Inicio', href: '' }, { label: crumb }]} />
+      <h1 id="ph-title" set:html={accent(page.h1, 2)}></h1>
+      <p class="lead" data-action-bar-trigger>{page.lead}</p>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container--narrow">
+      <Note boxed note={{ text: section.disclaimers[0].text, kind: 'provisional' }} />
+      <p style="margin-top:var(--s-5)"><a class="link-arrow" href={url('contacto/')}>{section.ctas[0]} <Icon name="arrow-right" /></a></p>
+    </div>
+  </section>
+</main>

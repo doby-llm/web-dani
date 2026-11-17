@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalPage from '../../components/sections/LegalPage.astro';
+import shared from '../../data/copy/shared.json';
+
+// Footer label "Aviso legal" (shared.json footer.columns[2].links).
+const crumb = shared.footer.columns[2].links[1];
+---
+<BaseLayout title="Aviso legal · Daniel Clemente" description="Aviso legal de la web de Daniel Clemente, nutricionista: titularidad, contacto y condiciones de uso (en preparación)." ogSlug="aviso-legal">
+  <LegalPage copyKey="aviso-legal" crumb={crumb} />
+</BaseLayout>
