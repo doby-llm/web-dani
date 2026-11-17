@@ -1,0 +1,123 @@
+---
+// Programas: both plans with full price tables. Medication sentences go through Note (R6, legal).
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Button from '../../components/Button.astro';
+import Icon from '../../components/Icon.astro';
+import Note from '../../components/Note.astro';
+import { PROVISIONAL } from '../../lib/env';
+import { primary } from '../../lib/nav';
+import { url } from '../../lib/url';
+import programas from '../../data/copy/programas.json';
+import medical from '../../data/copy/perdida-de-peso-con-apoyo-medico.json';
+import perdida from '../../data/copy/perdida-de-peso.json';
+
+const section = (id: string) => programas.sections.find(s => s.id === id)!;
+const a = section('programa-a');
+const b = section('programa-b');
+const cond = section('condiciones-pendientes');
+const tratamiento = perdida.sections.find(s => s.id === 'tratamiento-medico')!;
+
+// Microcopy §4.3: plan.letter, price.caption, chip.medical, cta.how.
+const [letterA, letterB] = 'Programa A / Programa B'.split(' / ');
+const caption = (letter: string) => 'Tarifas {Programa A/B}'.replace('{Programa A/B}', letter);
+const chipMedical = 'Tratamiento médico · provisional';
+const ctaHow = 'Cómo funciona';
+
+// Condiciones paragraph: the two inline links are cut from the copy string, not retyped (safe split).
+const s = cond.paragraphs[1];
+const L1 = 'tratamiento médico', L2 = 'cómo funciona el seguimiento';
+const i1 = s.indexOf(L1), i2 = s.indexOf(L2);
+const linked = i1 >= 0 && i2 > i1 + L1.length;
+---
+<BaseLayout
+  title="Programas y tarifas · Daniel Clemente"
+  description="Seguimiento nutricional online desde 180 € / 2 meses y opción con tratamiento médico. Precios orientativos."
+  ogSlug="programas"
+  current="programas"
+>
+  <main id="main">
+    <section class="page-hero page-hero--v4 bg-tint" aria-labelledby="ph-title">
+      <div class="container">
+        <Breadcrumb items={[{ label: 'Inicio' }, { label: primary.find(p => p.key === 'programas')!.label }]} />
+        <h1 id="ph-title">{programas.h1}</h1>
+        <p class="lead">{programas.lead}</p>
+      </div>
+    </section>
+
+    <section class="section bg-paper">
+      <div class="container">
+        <div class="plans">
+          <article class="plan" id={a.anchor}>
+            <div class="plan__top"><span class="plan__letter">{letterA}</span></div>
+            <h2 class="plan__title">{a.heading}</h2>
+            <p class="plan__sub">{a.paragraphs[0]}</p>
+            <table class="price-table">
+              <caption class="visually-hidden">{caption(letterA)}</caption>
+              <tbody>
+                {a.prices.map(p => <tr><th scope="row">{p.duration}</th><td>{p.price}</td></tr>)}
+              </tbody>
+            </table>
+            <ul class="plan__list">
+              {a.items.map(it => <li><Icon name="check" />{it.text}</li>)}
+            </ul>
+            <div style="margin-top:var(--s-5)">
+              <Note note={{ text: a.disclaimers[0].text, kind: 'provisional' }} />
+            </div>
+            <div class="plan__cta" data-action-bar-trigger>
+              <Button href="contacto/?objetivo=perdida-de-peso" variant="secondary" block>{programas.hero_ctas[0]}</Button>
+            </div>
+          </article>
+
+          <article class="plan plan--featured" id={b.anchor}>
+            <div class="plan__top">
+              <span class="plan__letter">{letterB}</span>
+              {PROVISIONAL && <span class="badge badge--provisional">{chipMedical}</span>}
+            </div>
+            <h2 class="plan__title">{b.heading}</h2>
+            <p class="plan__sub">{b.paragraphs[0]}</p>
+            <table class="price-table">
+              <caption class="visually-hidden">{caption(letterB)}</caption>
+              <tbody>
+                {b.prices.map(p => <tr><th scope="row">{p.duration}</th><td>{p.price}</td></tr>)}
+              </tbody>
+            </table>
+            <ul class="plan__list">
+              {b.items.map(it => <li><Icon name="check" />{it.text}</li>)}
+            </ul>
+            <div style="margin-top:var(--s-5)">
+              <Note note={{ text: b.disclaimers[0].text, kind: 'legal' }} />
+            </div>
+            <div class="plan__cta">
+              <Button href="contacto/?objetivo=medico" variant="primary" block>{medical.hero_ctas[1]}</Button>
+              <a class="link-arrow" style="justify-content:center" href={url('perdida-de-peso/tratamiento-medico/')}>
+                {tratamiento.ctas[0]}<Icon name="arrow-right" />
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--tight section bg-surface" aria-labelledby="cond-title">
+      <div class="container split split--5-7">
+        <div class="sec-head sec-head--stack">
+          <h2 id="cond-title">{cond.heading}</h2>
+        </div>
+        <div class="prose">
+          <p>{cond.paragraphs[0]}</p>
+          <Note note={{ text: cond.disclaimers[0].text, kind: 'legal' }} />
+          {linked ? (
+            <p>{s.slice(0, i1)}<a href={url('perdida-de-peso/tratamiento-medico/')}>{L1}</a>{s.slice(i1 + L1.length, i2)}<a href={url('como-funciona/')}>{L2}</a>{s.slice(i2 + L2.length)}</p>
+          ) : (
+            <>
+              <p>{s}</p>
+              <a class="link-arrow" href={url('perdida-de-peso/tratamiento-medico/')}>{tratamiento.ctas[0]}<Icon name="arrow-right" /></a>
+              <a class="link-arrow" href={url('como-funciona/')}>{ctaHow}<Icon name="arrow-right" /></a>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
