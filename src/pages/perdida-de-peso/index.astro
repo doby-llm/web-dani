@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Button from '../../components/Button.astro';
+import Fiche from '../../components/Fiche.astro';
+import Icon from '../../components/Icon.astro';
+import Note from '../../components/Note.astro';
+import Still from '../../components/Still.astro';
+import { accent } from '../../lib/text';
+import { url } from '../../lib/url';
+import { services } from '../../lib/nav';
+import grapefruit from '../../assets/img/grapefruit.png';
+import lemonB from '../../assets/img/lemon-b.png';
+import home from '../../data/copy/home.json';
+import perdida from '../../data/copy/perdida-de-peso.json';
+
+const svc = services.find(s => s.svc === 'weight')!;
+const sec = (id: string) => perdida.sections.find(s => s.id === id)!;
+const que = sec('que-incluye');
+const proceso = sec('proceso-acompanado');
+const medico = sec('tratamiento-medico');
+// R5: primary = "Quiero empezar" (hero_ctas[1]), secondary = "Ver programas" (hero_ctas[0]).
+const [ctaSecondary, ctaPrimary] = perdida.hero_ctas;
+
+// Microcopy fiche.* (SPEC §4.3); identical on the three service pages.
+const fiche = [
+  { dt: 'Modalidad', dd: '100% online' },
+  { dt: 'Seguimiento', dd: 'Seguimiento semanal y por WhatsApp' },
+  { dt: 'Revisión', dd: 'Videollamada mensual' },
+  { dt: 'Programas', dd: 'Ver programas', href: 'programas/' },
+];
+
+// Roles split of the home medical disclaimer (R4, same rule as T04 H3 and T06 A3).
+const text = home.sections.find(s => s.id === 'medical-treatment')!.disclaimers[0].text;
+const parts = text.split(/(?<=\.)\s+/);
+const ok = parts.length === 3;
+const roles = ok ? [{ who: 'Daniel', icon: 'clipboard-list', text: parts[0] }, { who: 'La profesional médica', icon: 'stethoscope', text: parts[1] }] : [];
+const legalNote = ok ? parts[2] : text;
+
+const band = home.sections.find(s => s.id === 'cta-banner')!;
+---
+<BaseLayout title="Pérdida de peso online · Daniel Clemente" description="Programa de pérdida de peso online con un enfoque integral, personalizado y basado en evidencia científica." ogSlug="perdida-de-peso" current="servicios">
+  <main id="main">
+    <section class="page-hero page-hero--v4 bg-weight svc-weight" aria-labelledby="ph-title">
+      <div class="container">
+        <Breadcrumb items={[{ label: 'Inicio', href: '' }, { label: 'Servicios', href: 'servicios/' }, { label: svc.title }]} />
+        <div class="page-hero__grid">
+          <div>
+            <h1 id="ph-title" set:html={accent(perdida.h1, 3)}></h1>
+            <p class="lead">{perdida.lead}</p>
+            <div class="btn-row btn-row--stack" data-action-bar-trigger>
+              <Button href="contacto/?objetivo=perdida-de-peso" variant="primary">{ctaPrimary}</Button>
+              <Button href="programas/" variant="secondary">{ctaSecondary}</Button>
+            </div>
+          </div>
+          <div class="page-hero__aside">
+            <Still
+              settle
+              objects={[
+                { src: grapefruit, w: '46%', right: '2%', top: '0', rotate: 18 },
+                { src: lemonB, w: '36%', right: '46%', top: '22%', rotate: -10 },
+              ]}
+            />
+            <Fiche title={svc.title} icon="scale" rows={fiche} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-paper" aria-labelledby="que-title">
+      <div class="container split split--5-7">
+        <div>
+          <div class="sec-head sec-head--stack">
+            <h2 id="que-title">{que.heading}</h2>
+          </div>
+          <div class="panel" style="margin-top:var(--s-5)">
+            <h3>{proceso.heading}</h3>
+            {proceso.paragraphs.map(p => <p style="margin-top:var(--s-3)">{p}</p>)}
+          </div>
+        </div>
+        <ul class="checklist">
+          {que.items.map(it => <li><Icon name="check" />{it.text}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section bg-medical" aria-labelledby="medico-title">
+      <div class="container split split--5-7">
+        <div>
+          <div class="sec-head sec-head--stack">
+            <h2 id="medico-title">{medico.heading}</h2>
+          </div>
+          <p>{medico.paragraphs[0]}</p>
+          <p style="margin-top:var(--s-5)"><a class="link-arrow" href={url('perdida-de-peso/tratamiento-medico/')}>{medico.ctas[0]} <Icon name="arrow-right" /></a></p>
+        </div>
+        <div>
+          {ok ? (
+            <div class="callout">
+              <table class="roles">
+                <tbody>
+                  {roles.map(r => (
+                    <tr>
+                      <th scope="row"><span><Icon name={r.icon} />{r.who}</span></th>
+                      <td>{r.text}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div class="callout__foot"><Note note={{ text: legalNote, kind: 'legal' }} /></div>
+            </div>
+          ) : (
+            <Note note={{ text: legalNote, kind: 'legal' }} />
+          )}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band cta-band--v4 bg-brand on-dark" aria-labelledby="end-title" data-hide-action-bar>
+      <div class="container cta-band__inner">
+        <div>
+          <h2 id="end-title">{band.heading}</h2>
+          <div class="btn-row btn-row--stack" style="margin-top:var(--s-6)">
+            <Button href="contacto/?objetivo=perdida-de-peso" variant="primary">{home.hero_ctas[0]}</Button>
+          </div>
+        </div>
+        <Still
+          objects={[
+            { src: grapefruit, w: '44%', right: '4%', top: '4%', rotate: 14 },
+            { src: lemonB, w: '38%', left: '10%', bottom: '0', rotate: -12 },
+          ]}
+        />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

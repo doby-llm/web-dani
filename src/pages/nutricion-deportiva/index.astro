@@ -1,0 +1,138 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Button from '../../components/Button.astro';
+import Fiche from '../../components/Fiche.astro';
+import Icon from '../../components/Icon.astro';
+import Note from '../../components/Note.astro';
+import Still from '../../components/Still.astro';
+import ServiceAreas from '../../components/sections/ServiceAreas.astro';
+import { accent } from '../../lib/text';
+import { services } from '../../lib/nav';
+import lemonA from '../../assets/img/lemon-a.png';
+import lemonB from '../../assets/img/lemon-b.png';
+import lemonC from '../../assets/img/lemon-c.png';
+import working from '../../assets/img/working.webp';
+import deportiva from '../../data/copy/nutricion-deportiva.json';
+import sobre from '../../data/copy/sobre-mi.json';
+
+const svc = services.find(s => s.svc === 'sport')!;
+const sec = (id: string) => deportiva.sections.find(s => s.id === id)!;
+const areas = sec('areas-de-trabajo');
+const incluir = sec('que-puede-incluir');
+const estrategia = sec('estrategia-encaje');
+const experiencia = sec('experiencia-deportistas');
+const plan = sec('plan-a-tu-medida');
+const constancia = sec('constancia');
+// Icons per area, in items order (§6.4).
+const areaIcons = ['dumbbell', 'footprints', 'activity', 'sun'];
+
+// Microcopy fiche.* (SPEC §4.3); identical on the three service pages.
+const fiche = [
+  { dt: 'Modalidad', dd: '100% online' },
+  { dt: 'Seguimiento', dd: 'Seguimiento semanal y por WhatsApp' },
+  { dt: 'Revisión', dd: 'Videollamada mensual' },
+  { dt: 'Programas', dd: 'Ver programas', href: 'programas/' },
+];
+---
+<BaseLayout title="Nutrición deportiva online · Daniel Clemente" description="Seguimiento nutricional para deportistas de fuerza, resistencia y otras modalidades, adaptado a tu entrenamiento y horarios." ogSlug="nutricion-deportiva" current="servicios">
+  <main id="main">
+    <section class="page-hero page-hero--v4 bg-sport svc-sport" aria-labelledby="ph-title">
+      <div class="container">
+        <Breadcrumb items={[{ label: 'Inicio', href: '' }, { label: 'Servicios', href: 'servicios/' }, { label: svc.title }]} />
+        <div class="page-hero__grid">
+          <div>
+            <h1 id="ph-title" set:html={accent(deportiva.h1, 4)}></h1>
+            <p class="lead">{deportiva.lead}</p>
+            <div class="btn-row btn-row--stack" data-action-bar-trigger>
+              <Button href="contacto/?objetivo=deportiva" variant="primary">{deportiva.hero_ctas[0]}</Button>
+              <Button href="programas/" variant="secondary">{deportiva.hero_ctas[1]}</Button>
+            </div>
+          </div>
+          <div class="page-hero__aside">
+            <Still
+              settle
+              objects={[
+                { src: lemonC, w: '46%', right: '2%', top: '0', rotate: 18 },
+                { src: lemonB, w: '36%', right: '46%', top: '22%', rotate: -10 },
+              ]}
+            />
+            <Fiche title={svc.title} icon="dumbbell" rows={fiche} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-paper svc-sport" aria-labelledby="areas-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="areas-title">{areas.heading}</h2>
+          <p>{areas.paragraphs[0]}</p>
+        </div>
+        <ServiceAreas areas={areas.items.map((it, i) => ({ ...it, icon: areaIcons[i] }))} />
+        <div style="margin-top:var(--s-5)">
+          <Note note={{ text: areas.disclaimers[0].text, kind: 'editorial' }} />
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-surface" aria-labelledby="inc-title">
+      <div class="container split split--5-7">
+        <div>
+          <div class="sec-head sec-head--stack">
+            <h2 id="inc-title">{incluir.heading}</h2>
+          </div>
+          <div class="panel" style="margin-top:var(--s-5)">
+            <h3>{estrategia.heading}</h3>
+            {estrategia.paragraphs.map(p => <p style="margin-top:var(--s-3)">{p}</p>)}
+          </div>
+        </div>
+        <ul class="checklist">
+          {incluir.items.map(it => <li><Icon name="check" />{it.text}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section bg-paper" aria-labelledby="ctx-title">
+      <div class="container profile">
+        <figure>
+          <div class="portrait">
+            <Image src={working} widths={[480, 768]} sizes="(max-width: 899px) 100vw, 40vw" loading="lazy" alt={sobre.sections[0].images[0].alt} />
+          </div>
+        </figure>
+        <div>
+          <div class="sec-head sec-head--stack">
+            <h2 id="ctx-title">{experiencia.heading}</h2>
+          </div>
+          <div class="prose">
+            {experiencia.paragraphs.map(p => <p>{p}</p>)}
+            <h3>{plan.heading}</h3>
+            <p>{plan.paragraphs[0]}</p>
+          </div>
+          <div style="margin-top:var(--s-5)">
+            <Note note={{ text: plan.disclaimers[0].text, kind: 'editorial' }} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band cta-band--v4 bg-brand on-dark" aria-labelledby="end-title" data-hide-action-bar>
+      <div class="container cta-band__inner">
+        <div>
+          <h2 id="end-title">{constancia.heading}</h2>
+          <p>{constancia.paragraphs[0]}</p>
+          <div class="btn-row btn-row--stack" style="margin-top:var(--s-6)">
+            <Button href="contacto/?objetivo=deportiva" variant="primary">{constancia.ctas[0]}</Button>
+          </div>
+        </div>
+        <Still
+          objects={[
+            { src: lemonA, w: '44%', right: '4%', top: '4%', rotate: 14 },
+            { src: lemonC, w: '38%', left: '10%', bottom: '0', rotate: -12 },
+          ]}
+        />
+      </div>
+    </section>
+  </main>
+</BaseLayout>
