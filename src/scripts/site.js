@@ -112,7 +112,7 @@ const toc = $('.toc');
 if (toc && 'IntersectionObserver' in window) {
   const links = $$('a', toc);
   const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) links.forEach(a => a.setAttribute('aria-current', String(a.hash === '#' + e.target.id)));
+    if (e.isIntersecting) links.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + e.target.id)));
   }), { rootMargin: '0px 0px -70% 0px' });
   $$('.article-body h2[id]').forEach(h => io.observe(h));
 }

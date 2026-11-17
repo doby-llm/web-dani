@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Note from '../../components/Note.astro';
+import Still from '../../components/Still.astro';
+import { url } from '../../lib/url';
+import avocado from '../../assets/img/avocado.png';
+import lemonA from '../../assets/img/lemon-a.png';
+import blog from '../../data/copy/blog.json';
+
+// Category labels (SPEC §4.3 cat.*). Same map as blog/[slug].astro, which also needs the article ground.
+const categories = {
+  'perdida-de-peso': 'Pérdida de peso',
+  deportiva: 'Nutrición deportiva',
+  clinica: 'Nutrición clínica',
+  habitos: 'Hábitos',
+};
+// Teaser rows take cat.* by index: the four ideas in blog.json order.
+const teaserCats = Object.values(categories);
+// Microcopy (SPEC §4.3): status.soon, article.read.
+const soon = 'Próximamente';
+const readTime = (n: number) => `${n} min de lectura`;
+
+const ideas = blog.sections.find(s => s.id === 'ideas')!.items;
+const published = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+const dateFmt = new Intl.DateTimeFormat('es-ES', { dateStyle: 'long' });
+---
+<BaseLayout title="Blog · Daniel Clemente, nutricionista" description="Artículos educativos sobre pérdida de peso, nutrición deportiva y hábitos, revisados desde la evidencia científica." ogSlug="blog" current="blog">
+  <main id="main">
+    <section class="page-hero page-hero--v4 bg-clinic" aria-labelledby="ph-title">
+      <div class="container">
+        <Breadcrumb items={[{ label: 'Inicio', href: '' }, { label: 'Blog' }]} />
+        <div class="page-hero__grid">
+          <div>
+            <h1 id="ph-title">{blog.h1}</h1>
+            <p class="lead" data-action-bar-trigger>{blog.lead}</p>
+          </div>
+          <div class="page-hero__aside">
+            <Still
+              settle
+              style="position:relative;inset:auto;width:100%;height:14rem"
+              objects={[
+                { src: lemonA, w: '42%', right: '4%', bottom: '2%', rotate: -12 },
+                { src: avocado, w: '34%', left: '10%', top: '6%', rotate: 8 },
+              ]}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-paper" aria-labelledby="blog-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="blog-title">Blog</h2>
+        <ul class="posts">
+          {published.map(entry => (
+            <li class="post-row">
+              <span class="post-row__cat">{categories[entry.data.category]}</span>
+              <div>
+                <h3><a href={url('blog/' + entry.id + '/')}>{entry.data.title}</a></h3>
+                <p>{entry.data.description}</p>
+                <p><time datetime={entry.data.published.toISOString()}>{dateFmt.format(entry.data.published)}</time> · {readTime(entry.data.readingMinutes)}</p>
+              </div>
+            </li>
+          ))}
+          {ideas.map((idea, i) => (
+            <li class="post-row">
+              <span class="post-row__cat">{teaserCats[i]}</span>
+              <div>
+                <h3>{idea.title}</h3>
+                <p>{idea.text}</p>
+                <Note note={{ text: idea.disclaimers[0].text, kind: 'editorial' }} />
+              </div>
+              <span class="badge post-row__status">{soon}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
