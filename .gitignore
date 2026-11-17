@@ -1,0 +1,9 @@
+node_modules
+dist
+dist-indexable
+.astro
+shots
+.env
+test-results
+playwright-report
+.lhci
