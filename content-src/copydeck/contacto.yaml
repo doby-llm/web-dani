@@ -1,0 +1,62 @@
+page: contacto
+old_path: contacto.html
+meta:
+  title: "Contacto | Daniel Clemente Nutricionista"
+  description: "Canales de contacto pendientes de confirmación y formulario demo que no envía ni almacena mensajes."
+eyebrow: "CONTACTO"
+h1: "Cuéntame tu objetivo cuando los canales estén confirmados"
+lead: "WhatsApp, email y otros canales están pendientes de confirmación. El formulario de esta página es una demo local y no debe incluir datos sanitarios."
+hero_ctas: ["Cuéntame tu objetivo", "Ver programas"]
+sections:
+  - id: canales
+    images:
+      - alt: "Icono de WhatsApp"
+        src: "assets/whatsapp-glyph.svg"
+    items:
+      - title: "WhatsApp"
+        text: "Pendiente de confirmación. No hay enlace de mensajería configurado."
+      - title: "Email"
+        text: "Pendiente de confirmación. No se publica un correo inventado."
+      - title: "Reserva"
+        text: "Pendiente de definición. No hay calendario ni pago conectado."
+  - id: formulario
+    kicker: "FORMULARIO DEMO"
+    heading: "Solicitud informativa"
+    level: h2
+    disclaimers:
+      - "No introduzcas patologías, medicación, diagnósticos, analíticas ni otros datos sanitarios. Este formulario no se envía ni se almacena."
+form:
+  fields:
+    - label: "Nombre *"
+      placeholder: "Tu nombre"
+      type: "text"
+      required: true
+      autocomplete: "name"
+    - label: "Email *"
+      placeholder: "tu@email.com"
+      type: "email"
+      required: true
+      autocomplete: "email"
+    - label: "WhatsApp opcional"
+      placeholder: "Pendiente de confirmación"
+      type: "tel"
+      required: false
+      autocomplete: "tel"
+    - label: "Objetivo"
+      placeholder: "Selecciona una opción"
+      type: "select"
+      required: false
+      options:
+        - "Pérdida de peso"
+        - "Reducción de grasa"
+        - "Mejora de composición corporal"
+        - "Ganancia de masa muscular"
+        - "Rendimiento o recuperación deportiva"
+        - "Apoyo nutricional clínico"
+    - label: "Mensaje"
+      placeholder: "Describe tu objetivo sin incluir datos sanitarios"
+      type: "textarea"
+      required: false
+  submit: "Validar demo"
+  notes:
+    - "Demo local: preventDefault activo; no hay backend, mailto, analytics, envío ni almacenamiento."

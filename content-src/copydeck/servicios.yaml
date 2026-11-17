@@ -1,0 +1,26 @@
+page: servicios
+old_path: servicios.html
+meta:
+  title: "Servicios | Daniel Clemente Nutricionista"
+  description: "Índice de servicios de nutrición online: pérdida de peso, nutrición deportiva y apoyo nutricional clínico con contenido pendiente de validación."
+eyebrow: "SERVICIOS"
+h1: "Nutrición online para objetivos de composición corporal, deporte y salud"
+lead: "La prioridad de captación es la pérdida de peso, reducción de grasa y mejora de composición corporal. También se contemplan masa muscular, rendimiento, recuperación y apoyo clínico."
+hero_ctas: ["Cuéntame tu objetivo", "Ver programas"]
+sections:
+  - id: service-cards
+    items:
+      - title: "Pérdida de peso"
+        text: "Página principal de captación: hábitos, reducción de grasa, composición corporal y seguimiento continuo."
+        ctas: ["Entrar"]
+      - title: "Nutrición deportiva"
+        text: "Ganancia de masa muscular, rendimiento y recuperación adaptadas a entrenamiento, horarios y objetivo."
+        ctas: ["Entrar"]
+      - title: "Nutrición clínica"
+        text: "Apoyo nutricional en situaciones clínicas concretas, sin presentar diagnóstico o tratamiento médico propio."
+        ctas: ["Entrar"]
+  - id: how-to-choose
+    heading: "Cómo elegir"
+    level: h2
+    paragraphs:
+      - "Si el objetivo principal es perder peso o reducir grasa, empieza por pérdida de peso. Si entrenas con un objetivo de masa muscular, rendimiento o recuperación, revisa nutrición deportiva. Si existe una situación clínica, el primer contacto debe servir para orientar límites y derivaciones cuando corresponda."

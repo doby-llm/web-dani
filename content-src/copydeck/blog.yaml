@@ -1,0 +1,32 @@
+page: blog
+old_path: blog.html
+meta:
+  title: "Blog provisional | Daniel Clemente"
+  description: "Índice editorial provisional con ideas educativas sobre GLP-1, proteína, colesterol y mantenimiento de pérdida de peso."
+eyebrow: "CONTENIDO EDUCATIVO PROVISIONAL"
+h1: "Ideas editoriales para una futura sección educativa"
+lead: "Estas tarjetas no son artículos publicados. No tienen fecha, autoría, fuentes ni desarrollo definitivo."
+hero_ctas: ["Cuéntame tu objetivo", "Ver programas"]
+sections:
+  - id: ideas
+    items:
+      - kicker: "Pérdida de peso · Idea"
+        title: "GLP-1 y pérdida de peso"
+        text: "Idea educativa provisional sobre el contexto de los GLP-1 y su conversación con profesionales."
+        disclaimers:
+          - "Contenido educativo provisional, pendiente de redacción y revisión."
+      - kicker: "Nutrición deportiva · Idea"
+        title: "Proteína y masa muscular"
+        text: "Idea educativa provisional sobre proteína, entrenamiento y ganancia de masa muscular."
+        disclaimers:
+          - "Contenido educativo provisional, pendiente de redacción y revisión."
+      - kicker: "Nutrición clínica · Idea"
+        title: "Colesterol, alimentación y hábitos"
+        text: "Idea educativa provisional sobre hábitos alimentarios en torno al colesterol."
+        disclaimers:
+          - "Contenido educativo provisional, pendiente de redacción y revisión."
+      - kicker: "Hábitos · Idea"
+        title: "Mantenimiento de la pérdida de peso"
+        text: "Idea educativa provisional sobre adherencia y mantenimiento a largo plazo."
+        disclaimers:
+          - "Contenido educativo provisional, pendiente de redacción y revisión."

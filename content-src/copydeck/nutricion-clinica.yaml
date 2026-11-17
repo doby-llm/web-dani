@@ -1,0 +1,63 @@
+page: nutricion-clinica
+old_path: nutricion-clinica.html
+meta:
+  title: "Nutrición clínica online | Daniel Clemente"
+  description: "Tratamiento y seguimiento nutricional online en patologías digestivas, alergias e intolerancias, dislipemias e hipertensión, adaptado a cada persona."
+eyebrow: "NUTRICIÓN CLÍNICA"
+h1: "Tratamiento y seguimiento nutricional adaptado a tu situación"
+lead: "Planificación nutricional individualizada para acompañar, entre otras situaciones, patologías digestivas, alergias e intolerancias alimentarias, dislipemias e hipertensión arterial. El plan se adapta a tu situación, tus objetivos y tus hábitos."
+hero_ctas: ["Cuéntame tu objetivo", "Ver programas"]
+sections:
+  - id: areas-de-trabajo
+    kicker: "ÁREAS DE TRABAJO"
+    heading: "Un seguimiento nutricional adaptado a cada situación"
+    level: h2
+    paragraphs:
+      - "La alimentación puede formar parte del abordaje de distintas patologías y condiciones de salud, con un seguimiento individualizado y basado en la evidencia."
+    items:
+      - title: "Patologías digestivas"
+        text: "Organización de la alimentación, revisión de tolerancias y seguimiento de hábitos en situaciones digestivas, adaptados a cada persona y a su evolución."
+      - title: "Alergias e intolerancias"
+        text: "Adaptación nutricional y búsqueda de alternativas para mantener una alimentación suficiente y variada, evitando restricciones innecesarias."
+      - title: "Dislipemias"
+        text: "Planificación de hábitos y elecciones alimentarias orientadas a acompañar el abordaje de las alteraciones del perfil lipídico, con seguimiento de la evolución nutricional."
+      - title: "Hipertensión arterial"
+        text: "Revisión de hábitos y de la organización de la alimentación, adaptada a los objetivos y a la evolución de cada persona."
+      - title: "Otras situaciones metabólicas"
+        text: "También pueden valorarse casos relacionados con diabetes, hígado graso u otras alteraciones metabólicas, siempre de forma individualizada."
+    disclaimers:
+      - "Áreas y contenidos provisionales, pendientes de validación editorial."
+  - id: que-puede-incluir
+    kicker: "TRATAMIENTO NUTRICIONAL"
+    heading: "¿Qué puede incluir el seguimiento?"
+    level: h2
+    items:
+      - text: "Valoración nutricional inicial y revisión de objetivos."
+      - text: "Plan adaptado a tu situación, preferencias, horarios y tolerancias."
+      - text: "Educación nutricional para comprender las decisiones y ganar autonomía."
+      - text: "Seguimiento de hábitos, evolución y adherencia, con ajustes cuando corresponda."
+  - id: seguimiento-practico
+    heading: "Un seguimiento práctico"
+    level: h2
+    paragraphs:
+      - "El objetivo es convertir tus necesidades nutricionales en pautas alimentarias realistas, sostenibles y aplicables a tu vida diaria."
+      - "En alergias e intolerancias se trabaja con alternativas y organización de la alimentación, evitando restricciones innecesarias y adaptando el plan a tu evolución."
+  - id: experiencia-clinica
+    kicker: "EXPERIENCIA CLÍNICA"
+    heading: "Un acompañamiento basado en tu contexto"
+    level: h2
+    paragraphs:
+      - "La propuesta parte de conocer tu situación, tus objetivos, tus hábitos y tu punto de partida antes de plantear cambios en la alimentación."
+      - "La experiencia clínica documentada incluye más de 3 años en consulta presencial de obesidad, cirugía bariátrica y pérdida de peso."
+  - id: plan-a-tu-medida
+    heading: "Plan a tu medida"
+    level: h2
+    paragraphs:
+      - "El seguimiento se ajusta a tus preferencias, horarios, tolerancias y evolución, con cambios progresivos que puedas mantener en el tiempo."
+    disclaimers:
+      - "Formación, experiencia, áreas de trabajo y condiciones del servicio pendientes de validación editorial."
+  - id: dia-a-dia
+    heading: "Seguimiento nutricional centrado en tu día a día"
+    level: h2
+    paragraphs:
+      - "El objetivo es convertir las necesidades de cada situación en pautas alimentarias prácticas, sostenibles y adaptadas a tu vida real, revisando el plan según la evolución."

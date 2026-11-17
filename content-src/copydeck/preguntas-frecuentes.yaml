@@ -1,0 +1,28 @@
+page: preguntas-frecuentes
+old_path: preguntas-frecuentes.html
+meta:
+  title: "Preguntas frecuentes | Daniel Clemente"
+  description: "FAQ sobre seguimiento nutricional online, programas, canales pendientes, precios provisionales y límites médicos."
+eyebrow: "FAQ"
+h1: "Preguntas frecuentes antes de contactar"
+lead: "Respuestas útiles con prudencia: los datos comerciales, médicos, legales y de contacto siguen pendientes de validación."
+hero_ctas: ["Cuéntame tu objetivo", "Ver programas"]
+sections:
+  - id: faq
+    items:
+      - title: "¿La atención es completamente online?"
+        text: "Sí, la web presenta una modalidad 100% online para toda España. No se ofrece consulta presencial propia."
+      - title: "¿Cómo es la primera valoración?"
+        text: "Sirve para conocer objetivos, hábitos y punto de partida antes de diseñar el plan nutricional."
+      - title: "¿Qué recibo después?"
+        text: "Un plan personalizado con Excel 365, recetas y menú, según la información documentada pendiente de validación."
+      - title: "¿Cómo funciona WhatsApp?"
+        text: "Se contempla seguimiento por WhatsApp para dudas y acompañamiento, pero el número y las reglas del canal están pendientes de confirmación."
+      - title: "¿Qué ocurre en la videollamada mensual?"
+        text: "Una revisión de aproximadamente 20 minutos para evaluar evolución y plantear ajustes."
+      - title: "¿Qué ocurre en la opción con tratamiento médico?"
+        text: "En casos seleccionados, tras una valoración médica individualizada, la profesional médica puede considerar un tratamiento farmacológico autorizado, incluidos cuando proceda medicamentos inyectables relacionados con la vía del receptor GLP-1. No se plantea como una solución aislada: se acompaña de seguimiento nutricional y de hábitos. La indicación, prescripción y seguimiento médico corresponden a la profesional médica; esta web no promociona ni vende medicamentos concretos."
+      - title: "¿Los precios son finales?"
+        text: "No. Todas las tarifas son orientativas/provisionales y pendientes de validación comercial."
+      - title: "¿Cómo se tratan mis datos?"
+        text: "Las políticas legales están en preparación. El formulario demo no envía ni almacena mensajes y no debe incluir datos sanitarios."

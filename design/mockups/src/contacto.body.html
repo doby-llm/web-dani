@@ -1,0 +1,62 @@
+<!-- META title="Contacto | Daniel Clemente Nutricionista" header="" cur="" -->
+<!-- TEMPLATE T-CONTACT. No action bar on this page (it IS the destination). Goal options preselect from ?objetivo= -->
+<main id="main">
+  <section class="page-hero page-hero--v4 bg-weight" aria-labelledby="ph-title">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Migas de pan"><ol><li><a href="home.html">Inicio</a></li><li aria-current="page">Contacto</li></ol></nav>
+      <div class="page-hero__grid">
+        <div>
+          <h1 id="ph-title">Cuéntame tu objetivo <em>cuando los canales estén confirmados</em></h1>
+          <p class="lead">WhatsApp, email y otros canales están pendientes de confirmación. El formulario de esta página es una demo local y no debe incluir datos sanitarios.</p>
+        </div>
+        <div class="page-hero__aside">
+        <div class="still still--settle" aria-hidden="true" style="position:relative;inset:auto;width:100%;height:14rem">
+          <img class="still__obj" src="../img/lemon-b.png" alt="" style="width:44%;right:4%;top:0;transform:rotate(10deg)">
+          <img class="still__obj" src="../img/avocado.png" alt="" style="width:34%;left:8%;bottom:0;transform:rotate(-10deg)">
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper" aria-labelledby="form-title">
+    <div class="container split split--5-7" style="align-items:start">
+      <aside aria-label="Canales">
+        <ul class="channels">
+          <li class="channel"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-message-circle"/></svg></span><div><h3>WhatsApp</h3><p>Pendiente de confirmación. No hay enlace de mensajería configurado.</p></div></li>
+          <li class="channel"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><div><h3>Email</h3><p>Pendiente de confirmación. No se publica un correo inventado.</p></div></li>
+          <li class="channel"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-calendar-days"/></svg></span><div><h3>Reserva</h3><p>Pendiente de definición. No hay calendario ni pago conectado.</p></div></li>
+        </ul>
+        <div class="panel" style="margin-top:var(--s-5)">
+          <h3>Qué se espera de ti</h3>
+          <p style="margin-top:var(--s-2)">Compartir información básica de hábitos, objetivo y evolución semanal.</p>
+        </div>
+      </aside>
+
+      <div class="panel">
+        <h2 id="form-title">Solicitud informativa</h2>
+        <p class="note note--boxed" style="margin-top:var(--s-4)"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg>No introduzcas patologías, medicación, diagnósticos, analíticas ni otros datos sanitarios. Este formulario no se envía ni se almacena.</p>
+        <form class="form" data-contact novalidate style="margin-top:var(--s-6)">
+          <div class="form__row">
+            <div class="field"><label class="field__label" for="f-name">Nombre *</label><input class="input" id="f-name" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required><p class="field__error"><svg class="icon icon--s" aria-hidden="true"><use href="#i-info"/></svg>Escribe tu nombre.</p></div>
+            <div class="field" data-invalid="true"><label class="field__label" for="f-email">Email *</label><input class="input" id="f-email" name="email" type="email" placeholder="tu@email.com" autocomplete="email" required aria-invalid="true" value="ana@"><p class="field__error"><svg class="icon icon--s" aria-hidden="true"><use href="#i-info"/></svg>Revisa el email: falta el dominio (por ejemplo, @gmail.com).</p></div>
+          </div>
+          <div class="field"><label class="field__label" for="f-wa">WhatsApp <span class="field__opt">opcional</span></label><input class="input" id="f-wa" name="whatsapp" type="tel" placeholder="Pendiente de confirmación" autocomplete="tel"></div>
+          <fieldset class="field goal-chips">
+            <legend class="field__label">Objetivo</legend>
+            <label class="goal-chip"><input type="radio" name="objetivo" value="perdida-de-peso" checked><span>Pérdida de peso</span></label>
+            <label class="goal-chip"><input type="radio" name="objetivo" value="reduccion-de-grasa"><span>Reducción de grasa</span></label>
+            <label class="goal-chip"><input type="radio" name="objetivo" value="composicion"><span>Mejora de composición corporal</span></label>
+            <label class="goal-chip"><input type="radio" name="objetivo" value="masa-muscular"><span>Ganancia de masa muscular</span></label>
+            <label class="goal-chip"><input type="radio" name="objetivo" value="rendimiento"><span>Rendimiento o recuperación deportiva</span></label>
+            <label class="goal-chip"><input type="radio" name="objetivo" value="clinico"><span>Apoyo nutricional clínico</span></label>
+          </fieldset>
+          <div class="field"><label class="field__label" for="f-msg">Mensaje</label><textarea class="input" id="f-msg" name="mensaje" placeholder="Describe tu objetivo sin incluir datos sanitarios"></textarea></div>
+          <button class="btn btn--primary btn--block" type="submit">Validar demo <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+          <p class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Demo local: preventDefault activo; no hay backend, mailto, analytics, envío ni almacenamiento.</p>
+        </form>
+        <div class="form-status" data-state="success" tabindex="-1" role="status" style="margin-top:var(--s-5)"><svg class="icon icon--l" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Datos validados.</strong><p>Esta demo no envía ni guarda nada. Cuando los canales estén confirmados, este mensaje indicará cuándo responderá Daniel.</p></div></div>
+      </div>
+    </div>
+  </section>
+</main>

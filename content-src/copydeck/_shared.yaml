@@ -1,0 +1,53 @@
+scope: "Elementos compartidos por todas las páginas: aviso superior, enlace de salto, cabecera, pie y botones flotantes. Extraídos de la primera página; idénticos en las 15."
+skip_link: "Saltar al contenido"
+site_notice: "Web en preparación comercial · Contenido pendiente de validación"
+header:
+  brand_name: "DANIEL CLEMENTE"
+  brand_role: "NUTRICIONISTA"
+  menu_toggle_aria: "Abrir menú"
+  nav_aria: "Navegación principal"
+  nav:
+    - "Inicio"
+    - "Servicios"
+    - "Cómo funciona"
+    - "Programas"
+    - "Sobre mí"
+    - "Blog"
+    - "FAQ"
+    - "Contacto"
+  nav_cta: "Contacto informativo"
+footer:
+  brand_name: "DANIEL CLEMENTE"
+  brand_role: "NUTRICIONISTA"
+  tagline: "Nutrición online personalizada, con evidencia científica, cercanía y límites claros."
+  columns:
+    - heading: "Servicios"
+      links:
+        - "Pérdida de peso"
+        - "Nutrición deportiva"
+        - "Nutrición clínica"
+    - heading: "Información"
+      links:
+        - "Cómo funciona"
+        - "Programas"
+        - "Sobre mí"
+        - "Blog"
+        - "FAQ"
+    - heading: "Contacto"
+      links:
+        - "Canales pendientes"
+        - "Aviso legal"
+        - "Privacidad"
+        - "Cookies"
+  bottom:
+    - "© {año} Daniel Clemente Nutricionista"   # {año} = <span data-current-year>, rellenado por script.js
+    - "GitHub Pages · Web estática"
+floating:
+  mobile_contact_bar: "Contacto informativo"
+  contact_float_label: "Contacto"
+  contact_float_aria: "Ir a contacto"
+noscript:
+  - text: "El contenido es accesible sin JavaScript; el menú móvil y el formulario demo usan JavaScript para sus estados."
+    pages: ["index", "servicios", "nutricion-deportiva", "nutricion-clinica", "como-funciona", "sobre-mi", "preguntas-frecuentes", "blog", "contacto", "aviso-legal", "privacidad", "cookies"]
+  - text: "El contenido es accesible sin JavaScript; el menú móvil usa JavaScript para sus estados."
+    pages: ["perdida-de-peso", "perdida-de-peso-con-apoyo-medico", "programas"]

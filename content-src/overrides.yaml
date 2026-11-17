@@ -1,0 +1,113 @@
+# Copy overrides — planner proposal (DEC-06, pending Manu's answer to Q1).
+# Rule: copydeck/ is the verbatim source. This file lists the ONLY sentences that change.
+# Reason for every change: the old prototype exposes internal/dev notes to clients
+# ("prioridad de captación", "placeholder honesto", "preventDefault activo"...).
+# No new facts are added. Facts, prices, credentials and medical limits stay verbatim.
+#
+# Format: page -> list of {find: <exact old string>, replace: <new string | "" to drop>, why}
+# Notes ("disclaimers") are NOT rewritten here: they get a `kind` (see notes_kind) and
+# visibility is controlled by PUBLIC_PROVISIONAL (SPEC §4.2).
+
+_shared:
+  - {find: "Contacto informativo", replace: "Contacto", why: "header CTA: short, action-named", where: "header.nav_cta"}
+  - {find: "Contacto informativo", replace: "Cuéntame tu objetivo", why: "mobile action bar + menu sheet CTA: action, reused label", where: "floating.mobile_contact_bar"}
+  - {find: "Canales pendientes", replace: "Contacto", why: "footer link label", where: "footer.columns[2].links[0]"}
+  - {find: "GitHub Pages · Web estática", replace: "", why: "internal tech note"}
+
+home:
+  - {find: "Contacto informativo", replace: "Ver programas", why: "secondary hero CTA must not duplicate primary destination", where: "hero_ctas[1]"}
+  - {find: "Tarifas recibidas para este prototipo; pendientes de validación comercial.", replace: "", why: "internal; duplicated by the next disclaimer"}
+  - {find: "Mi formación documentada incluye", replace: "Mi formación incluye", why: "'documentada' is an editorial flag, not client copy"}
+  - {find: "Alcance pendiente de validación profesional", replace: "", why: "editorial flag inside a feature list; covered by plan note"}
+  - {find: "Formulario demo", replace: "Cuéntame tu objetivo", why: "CTA label"}
+  - {find: "Ver ideas", replace: "", why: "teasers are not linkable until published (status chip 'Próximamente')"}
+
+servicios:
+  - {find: "La prioridad de captación es la pérdida de peso, reducción de grasa y mejora de composición corporal. También se contemplan masa muscular, rendimiento, recuperación y apoyo clínico.", replace: "Trabajo sobre todo la pérdida de peso, la reducción de grasa y la mejora de la composición corporal. También te acompaño si buscas masa muscular, rendimiento, recuperación o apoyo clínico.", why: "internal marketing note → client voice (first person, as home)"}
+  - {find: "Página principal de captación: hábitos, reducción de grasa, composición corporal y seguimiento continuo.", replace: "Hábitos, reducción de grasa, composición corporal y seguimiento continuo.", why: "internal note"}
+  - {find: "Entrar", replace: "Ver servicio", why: "same label as home"}
+
+perdida-de-peso-con-apoyo-medico:
+  - {find: "Ver programa provisional", replace: "Ver programa", why: "provisional status is carried by the note, not the button"}
+
+nutricion-deportiva:
+  - {find: "La experiencia documentada incluye", replace: "La experiencia incluye", why: "editorial flag"}
+
+nutricion-clinica:
+  - {find: "La experiencia clínica documentada incluye", replace: "La experiencia clínica incluye", why: "editorial flag"}
+
+como-funciona:
+  - {find: "No introduzcas datos sanitarios sensibles en el formulario demo de esta web.", replace: "No incluyas datos de salud en el formulario de contacto.", why: "client wording"}
+  - {find: "No se ofrece consulta presencial propia, diagnóstico médico online desde esta página, pagos, reservas ni canales definitivos hasta su confirmación.", replace: "No hay consulta presencial ni diagnóstico médico desde esta web. Los pagos, las reservas y los canales de contacto se confirmarán más adelante.", why: "same facts, readable"}
+
+programas:
+  - {find: "Programas y tarifas recibidas, todavía provisionales", replace: "Programas y tarifas", why: "H1 = page subject; provisional status stays in lead + notes"}
+  - {find: "Las inclusiones y precios proceden de material recibido. Deben validarse antes de convertirse en condiciones comerciales finales.", replace: "Inclusiones y precios orientativos: se confirmarán antes de contratar.", why: "internal provenance note"}
+
+sobre-mi:
+  - {find: "Formación documentada", replace: "Formación", why: "editorial flag in a heading"}
+
+preguntas-frecuentes:
+  - {find: "Respuestas útiles con prudencia: los datos comerciales, médicos, legales y de contacto siguen pendientes de validación.", replace: "Lo que suele preguntarse antes de empezar. Precios, canales y condiciones están pendientes de confirmar.", why: "client voice"}
+  - {find: "Sí, la web presenta una modalidad 100% online para toda España.", replace: "Sí, el seguimiento es 100% online para toda España.", why: "client voice"}
+  - {find: ", según la información documentada pendiente de validación.", replace: ".", why: "editorial flag"}
+  - {find: "Las políticas legales están en preparación. El formulario demo no envía ni almacena mensajes y no debe incluir datos sanitarios.", replace: "Las políticas legales están en preparación. El formulario de contacto todavía no envía ni guarda mensajes, y no debe incluir datos de salud.", why: "client wording"}
+
+blog:
+  - {find: "Ideas editoriales para una futura sección educativa", replace: "Artículos en preparación", why: "client-facing H1"}
+  - {find: "Estas tarjetas no son artículos publicados. No tienen fecha, autoría, fuentes ni desarrollo definitivo.", replace: "Próximos artículos educativos, siempre revisados desde la evidencia científica.", why: "reuse home sentence"}
+  - {find: "Idea educativa provisional sobre el contexto de los GLP-1 y su conversación con profesionales.", replace: "Una explicación clara para entender el contexto y hablarlo con profesionales.", why: "reuse home teaser"}
+  - {find: "Idea educativa provisional sobre proteína, entrenamiento y ganancia de masa muscular.", replace: "Claves para orientar tu alimentación cuando buscas mejorar tu composición corporal.", why: "reuse home teaser"}
+  - {find: "Idea educativa provisional sobre hábitos alimentarios en torno al colesterol.", replace: "Hábitos alimentarios en torno al colesterol.", why: "drop internal prefix"}
+  - {find: "Idea educativa provisional sobre adherencia y mantenimiento a largo plazo.", replace: "Hábitos y decisiones sostenibles más allá de una dieta puntual.", why: "reuse home teaser"}
+  - {find: "Proteína y masa muscular", replace: "Proteína y ganancia de masa muscular", why: "same title as home"}
+  - {find: "Mantenimiento de la pérdida de peso", replace: "Cómo mantener la pérdida de peso", why: "same title as home"}
+
+contacto:
+  - {find: "Cuéntame tu objetivo cuando los canales estén confirmados", replace: "Cuéntame tu objetivo", why: "H1; pending status lives in the lead"}
+  - {find: "WhatsApp, email y otros canales están pendientes de confirmación. El formulario de esta página es una demo local y no debe incluir datos sanitarios.", replace: "WhatsApp, email y reservas están pendientes de confirmación. Mientras tanto, este formulario es una demostración: no envía ni guarda nada, y no debe incluir datos de salud.", why: "client wording, same facts"}
+  - {find: "Pendiente de confirmación. No hay enlace de mensajería configurado.", replace: "Pendiente de confirmación.", why: "dev note"}
+  - {find: "Pendiente de confirmación. No se publica un correo inventado.", replace: "Pendiente de confirmación.", why: "dev note"}
+  - {find: "Pendiente de definición. No hay calendario ni pago conectado.", replace: "Pendiente de definición.", why: "dev note"}
+  - {find: "Pendiente de confirmación", replace: "Tu número (opcional)", why: "WhatsApp input placeholder", where: "form.fields[2].placeholder"}
+  - {find: "WhatsApp opcional", replace: "WhatsApp", why: "label; 'opcional' rendered as .field__opt span", where: "form.fields[2].label"}
+  - {find: "Validar demo", replace: "Enviar", why: "submit names its action; demo state is in the note"}
+  - {find: "Demo local: preventDefault activo; no hay backend, mailto, analytics, envío ni almacenamiento.", replace: "Demostración: este formulario todavía no envía ni guarda ningún dato.", why: "dev note → client"}
+
+aviso-legal:
+  - {find: "Esta página no afirma cumplimiento definitivo. Deben confirmarse titularidad, datos identificativos, contacto, condiciones de uso, responsabilidades y cualquier requisito aplicable antes de publicación comercial.", replace: "Estamos preparando el aviso legal. Aquí aparecerán la titularidad, los datos identificativos, el contacto y las condiciones de uso de esta web.", why: "dev note → client"}
+  - {find: "Documento legal provisional, pendiente de preparación y revisión. No afirmar cumplimiento definitivo.", replace: "Documento legal provisional, pendiente de preparación y revisión.", why: "drop internal instruction"}
+
+privacidad:
+  - {find: "El formulario demo no envía ni almacena datos. Antes de conectar un proveedor real habrá que definir responsable, finalidad, base jurídica, conservación, encargados, derechos y tratamiento de datos, especialmente si hubiese datos de salud.", replace: "El formulario de contacto todavía no envía ni guarda datos. Antes de activarlo se publicará aquí la política completa: responsable, finalidad, base jurídica, conservación y tus derechos.", why: "dev note → client"}
+  - {find: "Documento legal provisional, pendiente de preparación y revisión. No afirmar cumplimiento definitivo.", replace: "Documento legal provisional, pendiente de preparación y revisión.", why: "drop internal instruction"}
+
+cookies:
+  - {find: "Esta web estática no incorpora analytics, CDN ni scripts externos. Si se añaden herramientas que usen cookies, esta página deberá actualizarse con información y consentimiento adecuados.", replace: "Esta web no usa cookies ni herramientas de analítica. Si eso cambia, esta página lo explicará y te pedirá consentimiento.", why: "client wording"}
+  - {find: "Documento legal provisional, pendiente de preparación y revisión. No afirmar cumplimiento definitivo.", replace: "Documento legal provisional, pendiente de preparación y revisión.", why: "drop internal instruction"}
+
+# Note kinds (SPEC §4.2). legal = always shown. provisional = shown while PUBLIC_PROVISIONAL=true.
+# editorial = shown only when PUBLIC_SHOW_EDITORIAL=true (prototype review builds); never in production.
+notes_kind:
+  legal:
+    - "Daniel acompaña la parte nutricional y de hábitos. La valoración, indicación, prescripción y seguimiento médico corresponden a la profesional médica. Esta web no promociona ni vende medicamentos concretos y la medicación no está incluida en el programa."
+    - "Esta información es general y provisional; no sustituye una consulta médica ni constituye una recomendación farmacológica."
+    - "Esta web no vende ni dispensa medicamentos, la medicación no está incluida en el precio del programa y no se inicia ni modifica desde el seguimiento nutricional."
+    - "No introduzcas patologías, medicación, diagnósticos, analíticas ni otros datos sanitarios. Este formulario no se envía ni se almacena."
+    - "No incluyas datos de salud en el formulario de contacto."
+    - "La medicación no está incluida en el precio del programa."
+  provisional:
+    - "Las tarifas, condiciones y alcance de la opción médica son provisionales y deben confirmarse antes de contratar."
+    - "Tarifas orientativas/provisionales, pendientes de validación."
+    - "Precios, colaboración, alcance y condiciones orientativos/provisionales. La medicación no está incluida."
+    - "Documento legal provisional, pendiente de preparación y revisión."
+    - "Demostración: este formulario todavía no envía ni guarda ningún dato."
+  editorial:
+    - "Formación, experiencia y denominaciones oficiales pendientes de validación editorial."
+    - "Denominación oficial pendiente de validar antes de publicación comercial."
+    - "Experiencia, docencia y formulación editorial pendientes de validación."
+    - "Áreas, experiencia y condiciones del servicio provisionales, pendientes de validación editorial."
+    - "Áreas y contenidos provisionales, pendientes de validación editorial."
+    - "Formación, experiencia, áreas de trabajo y condiciones del servicio pendientes de validación editorial."
+    - "Bloque médico pendiente de validación profesional, legal y comercial."
+    - "Contenido educativo provisional, pendiente de redacción y revisión."

@@ -1,0 +1,39 @@
+page: como-funciona
+old_path: como-funciona.html
+meta:
+  title: "Cómo funciona | Daniel Clemente Nutricionista"
+  description: "Proceso online en cinco pasos: valoración, plan, Excel 365, seguimiento semanal, WhatsApp, videollamada mensual y ajustes."
+eyebrow: "PROCESO ONLINE"
+h1: "Cómo funciona el seguimiento nutricional"
+lead: "Un proceso real en cinco pasos, pensado para reducir incertidumbre antes de empezar y acompañar la evolución semana a semana."
+hero_ctas: ["Cuéntame tu objetivo", "Ver programas"]
+sections:
+  - id: pasos
+    items:
+      - number: "01"
+        title: "Valoración inicial"
+        text: "Conocer a la persona, analizar objetivos y establecer el punto de partida."
+      - number: "02"
+        title: "Plan personalizado"
+        text: "Plan nutricional adaptado, con Excel 365, recetas y menú."
+      - number: "03"
+        title: "Seguimiento semanal y WhatsApp"
+        text: "Reporte semanal de evolución y contacto para dudas y acompañamiento."
+      - number: "04"
+        title: "Videollamada mensual"
+        text: "Revisión aproximada de 20 minutos para valorar evolución y adherencia."
+      - number: "05"
+        title: "Ajustes según evolución"
+        text: "Cambios en el plan en función de datos, sensaciones y vida real."
+  - id: que-se-espera
+    heading: "Qué se espera de ti"
+    level: h2
+    paragraphs:
+      - "Compartir información básica de hábitos, objetivo y evolución semanal."
+    disclaimers:
+      - "No introduzcas datos sanitarios sensibles en el formulario demo de esta web."
+  - id: que-no-incluido
+    heading: "Qué no está incluido aquí"
+    level: h2
+    paragraphs:
+      - "No se ofrece consulta presencial propia, diagnóstico médico online desde esta página, pagos, reservas ni canales definitivos hasta su confirmación."

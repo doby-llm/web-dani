@@ -1,0 +1,174 @@
+page: home
+old_path: index.html
+meta:
+  title: "Daniel Clemente | Nutricionista online"
+  description: "Nutrición clínica, deportiva y composición corporal con un enfoque integral, personalizado y basado en evidencia científica."
+eyebrow: "NUTRICIÓN CLÍNICA · DEPORTIVA · COMPOSICIÓN CORPORAL"
+h1: "Pérdida de peso con un enfoque integral y personalizado"
+lead: "Seguimiento nutricional online para mejorar tu salud, tu composición corporal y tu rendimiento."
+hero_ctas: ["Quiero empezar", "Contacto informativo"]
+hero_proof: ["100% online", "Seguimiento continuo", "Sin dietas milagro"]
+hero_float: ["Seguimiento", "cercano y flexible"]
+hero_images:
+  - alt: "Mesa luminosa con alimentos, planificación nutricional y un portátil"
+    src: "assets/hero-editorial.png"
+    caption: "Un plan adaptado a tu vida real"
+sections:
+  - id: medical-treatment
+    kicker: "TRATAMIENTO MÉDICO · PROVISIONAL"
+    heading: "Pérdida de peso con tratamiento médico"
+    level: h2
+    paragraphs:
+      - "En casos seleccionados, la profesional médica puede valorar un tratamiento farmacológico autorizado, incluidos cuando proceda medicamentos inyectables que actúan sobre la vía del receptor GLP-1. No es una solución aislada: se integra con seguimiento nutricional y de hábitos."
+    ctas: ["Ver el tratamiento médico"]
+    disclaimers:
+      - "Daniel acompaña la parte nutricional y de hábitos. La valoración, indicación, prescripción y seguimiento médico corresponden a la profesional médica. Esta web no promociona ni vende medicamentos concretos y la medicación no está incluida en el programa."
+
+  - id: objectives
+    kicker: "UN PLAN ADAPTADO A TI"
+    heading: "¿Cuál es tu objetivo?"
+    level: h2
+    paragraphs:
+      - "Te acompaño con una estrategia nutricional realista, flexible y basada en la evidencia científica."
+    items:
+      - kicker: "PRIORIDAD DE CAPTACIÓN"
+        title: "Perder peso"
+        text: "Reduce grasa, mejora tu composición corporal y trabaja para mantener tus resultados a largo plazo."
+        featured: true
+        ctas: ["Ver servicio"]
+      - kicker: "RENDIMIENTO"
+        title: "Nutrición deportiva"
+        text: "Mejora tu rendimiento, gana masa muscular y optimiza tu recuperación con una estrategia a tu medida."
+        ctas: ["Ver servicio"]
+      - kicker: "SALUD"
+        title: "Nutrición clínica"
+        text: "Seguimiento nutricional adaptado a patologías digestivas, alergias e intolerancias, dislipemias e hipertensión."
+        ctas: ["Ver servicio"]
+
+  - id: pricing
+    kicker: "PROGRAMAS ONLINE"
+    heading: "Elige el acompañamiento que mejor encaja contigo"
+    level: h2
+    disclaimers:
+      - "Tarifas recibidas para este prototipo; pendientes de validación comercial."
+      - "Las tarifas, condiciones y alcance de la opción médica son provisionales y deben confirmarse antes de contratar."
+    items:
+      - kicker: "PROGRAMA A"
+        number: "01"
+        title: "Seguimiento nutricional"
+        program: "A"
+        text: "Sin seguimiento médico."
+        includes:
+          - "Valoración nutricional inicial"
+          - "Plan nutricional personalizado"
+          - "Recetas y menú en Excel 365"
+          - "Seguimiento semanal y por WhatsApp"
+          - "Una videollamada mensual"
+          - "Ajustes según tu evolución"
+        prices:
+          - label: "Desde"
+            duration: "2 meses"
+            price: "180 €"
+          - duration: "4 meses"
+            price: "320 €"
+          - duration: "6 meses"
+            price: "450 €"
+        ctas: ["Ver programa"]
+      - kicker: "PROGRAMA B"
+        number: "02"
+        badge: "TRATAMIENTO MÉDICO · PROVISIONAL"
+        title: "Nutrición + tratamiento médico"
+        program: "B"
+        recommended: true
+        text: "Cuando la profesional médica lo indique y prescriba, puede incluir tratamiento farmacológico autorizado, junto con seguimiento nutricional y de hábitos."
+        includes:
+          - "Todo lo incluido en el seguimiento nutricional"
+          - "Valoración médica inicial"
+          - "Tratamiento farmacológico autorizado, si procede"
+          - "Seguimiento nutricional y de hábitos"
+          - "Alcance pendiente de validación profesional"
+        prices:
+          - label: "Desde"
+            duration: "2 meses"
+            price: "280 €"
+          - duration: "4 meses"
+            price: "420 €"
+          - duration: "6 meses"
+            price: "550 €"
+        ctas: ["Ver detalles"]
+
+  - id: process
+    kicker: "ACOMPAÑAMIENTO CONTINUO"
+    heading: "Cómo funciona el seguimiento"
+    level: h2
+    paragraphs:
+      - "Un acompañamiento cercano, flexible y 100% online."
+    items:
+      - number: "01"
+        title: "Valoración inicial"
+        text: "Conoceremos tus objetivos y estableceremos tu punto de partida."
+      - number: "02"
+        title: "Plan personalizado"
+        text: "Recibirás un plan adaptado, con recetas y planificación."
+      - number: "03"
+        title: "Seguimiento continuo"
+        text: "Contacto por WhatsApp para resolver dudas y acompañarte."
+      - number: "04"
+        title: "Videollamada mensual"
+        text: "Revisamos tu evolución en una sesión de aproximadamente 20 minutos."
+      - number: "05"
+        title: "Ajustes necesarios"
+        text: "Compartes tu evolución y adaptamos el plan a tu realidad."
+
+  - id: cta-banner
+    kicker: "NUTRICIÓN · CIENCIA · COMPROMISO"
+    heading: "Tu objetivo merece un plan que encaje contigo."
+    level: h2
+    ctas: ["Quiero empezar"]
+
+  - id: about
+    kicker: "SOBRE MÍ"
+    heading: "Una forma de trabajar cercana, clara y basada en la evidencia"
+    level: h2
+    paragraphs:
+      - "Soy Daniel Clemente, nutricionista, y mi objetivo es ayudarte a conseguir tus metas de forma saludable, sostenible y adaptada a tu vida."
+      - "Mi formación documentada incluye el grado en nutrición por la UEM, FP superior de dietética y un máster en endocrinología y nutrición clínica por la UCAM."
+    items:
+      - text: "Más de 8 años con pacientes online, especialmente deportistas y personas que buscan mejorar su composición corporal."
+      - text: "Más de 3 años en consulta clínica presencial de obesidad, cirugía bariátrica y pérdida de peso."
+      - text: "Profesor de un máster universitario de alimentación, salud y deporte."
+      - text: "Todos los tratamientos se plantean desde la evidencia científica, sin dietas milagro ni promesas no fundamentadas."
+    disclaimers:
+      - "Formación, experiencia y denominaciones oficiales pendientes de validación editorial."
+    ctas: ["Conoce más sobre mí"]
+    stamp: ["EVIDENCIA", "+ CERCANÍA"]
+    images:
+      - alt: "Daniel Clemente sentado frente a un portátil en un entorno luminoso"
+        src: "assets/daniel-about.png"
+
+  - id: blog
+    kicker: "IDEAS DE CONTENIDO"
+    heading: "Información para tomar mejores decisiones"
+    level: h2
+    paragraphs:
+      - "Próximos artículos educativos, siempre revisados desde la evidencia científica."
+    items:
+      - kicker: "PÉRDIDA DE PESO · PRÓXIMAMENTE"
+        title: "GLP-1 y pérdida de peso"
+        text: "Una explicación clara para entender el contexto y hablarlo con profesionales."
+        ctas: ["Ver ideas"]
+      - kicker: "NUTRICIÓN DEPORTIVA · PRÓXIMAMENTE"
+        title: "Proteína y ganancia de masa muscular"
+        text: "Claves para orientar tu alimentación cuando buscas mejorar tu composición corporal."
+        ctas: ["Ver ideas"]
+      - kicker: "HÁBITOS · PRÓXIMAMENTE"
+        title: "Cómo mantener la pérdida de peso"
+        text: "Hábitos y decisiones sostenibles más allá de una dieta puntual."
+        ctas: ["Ver ideas"]
+
+  - id: final-cta
+    heading: "¿Listo para empezar?"
+    level: h2
+    paragraphs:
+      - "Cuéntame cuál es tu objetivo y revisa qué opción puede encajar mejor contigo."
+    ctas: ["Formulario demo", "Contacto"]

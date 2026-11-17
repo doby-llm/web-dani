@@ -1,0 +1,63 @@
+page: nutricion-deportiva
+old_path: nutricion-deportiva.html
+meta:
+  title: "Nutrición deportiva online | Daniel Clemente"
+  description: "Seguimiento nutricional online para deportistas de fuerza, resistencia y otras modalidades, adaptado al entrenamiento, los horarios y los objetivos de cada persona."
+eyebrow: "NUTRICIÓN DEPORTIVA · FUERZA · RESISTENCIA"
+h1: "Seguimiento nutricional adaptado a tu entrenamiento y a tu vida"
+lead: "Planificación nutricional para deportistas de fuerza, resistencia y otras modalidades que buscan ganar masa muscular, mejorar su rendimiento, recuperarse mejor o encontrar una organización que puedan mantener."
+hero_ctas: ["Cuéntame tu objetivo", "Ver programas"]
+sections:
+  - id: areas-de-trabajo
+    kicker: "ÁREAS DE TRABAJO"
+    heading: "Nutrición adaptada a tu deporte y a tu rutina"
+    level: h2
+    paragraphs:
+      - "El seguimiento parte de tu objetivo, tu entrenamiento y tu contexto para convertir la alimentación en una herramienta práctica, flexible y sostenible."
+    items:
+      - title: "Deportistas de fuerza"
+        text: "Organización de la alimentación para acompañar objetivos de ganancia de masa muscular, mejora de la composición corporal y evolución del entrenamiento."
+      - title: "Deportes de resistencia"
+        text: "Planificación nutricional adaptada al volumen de entrenamiento, los horarios, la recuperación y las necesidades de cada etapa."
+      - title: "Otras modalidades deportivas"
+        text: "Seguimiento para personas que practican otras disciplinas y necesitan ordenar su alimentación alrededor de sus sesiones, objetivos y vida diaria."
+      - title: "Rendimiento y recuperación"
+        text: "Revisión de hábitos y organización de comidas para que puedas entrenar, recuperarte y sostener el plan dentro de tu rutina real."
+    disclaimers:
+      - "Áreas, experiencia y condiciones del servicio provisionales, pendientes de validación editorial."
+  - id: que-puede-incluir
+    kicker: "SEGUIMIENTO NUTRICIONAL"
+    heading: "¿Qué puede incluir el trabajo?"
+    level: h2
+    items:
+      - text: "Valoración inicial de tu objetivo, entrenamiento, horarios y punto de partida."
+      - text: "Plan nutricional personalizado, adaptado a tus preferencias y a tu organización diaria."
+      - text: "Planificación de la alimentación alrededor del entrenamiento y la recuperación."
+      - text: "Excel 365 con recetas y menú para facilitar la aplicación del plan."
+      - text: "Seguimiento semanal, videollamada mensual y ajustes según la evolución."
+  - id: estrategia-encaje
+    heading: "Una estrategia que encaje contigo"
+    level: h2
+    paragraphs:
+      - "La propuesta no consiste en imponer una dieta cerrada, sino en ayudarte a organizar decisiones alimentarias que puedas aplicar junto con tus entrenamientos y tus horarios."
+      - "El plan se revisa de forma progresiva para acompañar los cambios en tus objetivos, tu rutina y tu evolución."
+  - id: experiencia-deportistas
+    kicker: "EXPERIENCIA CON DEPORTISTAS"
+    heading: "Un acompañamiento basado en tu contexto"
+    level: h2
+    paragraphs:
+      - "La propuesta parte de conocer tu disciplina, la frecuencia y el tipo de entrenamiento, tus horarios, tus hábitos y el objetivo que quieres trabajar."
+      - "La experiencia documentada incluye más de 8 años con pacientes online, especialmente deportistas y personas orientadas a mejorar su composición corporal."
+  - id: plan-a-tu-medida
+    heading: "Plan a tu medida"
+    level: h2
+    paragraphs:
+      - "El seguimiento se ajusta a tu nivel, tus preferencias, tus horarios y tu evolución, con una planificación realista para tu día a día."
+    disclaimers:
+      - "Formación, experiencia, áreas de trabajo y condiciones del servicio pendientes de validación editorial."
+  - id: constancia
+    heading: "Nutrición deportiva para avanzar con constancia"
+    level: h2
+    paragraphs:
+      - "El objetivo es que entiendas cómo organizar tu alimentación alrededor de tu entrenamiento y encuentres una forma de comer que puedas mantener mientras trabajas tu rendimiento, tu recuperación o tu composición corporal."
+    ctas: ["Cuéntame tu objetivo"]

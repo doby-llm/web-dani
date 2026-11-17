@@ -1,0 +1,62 @@
+page: programas
+old_path: programas.html
+meta:
+  title: "Programas y tarifas provisionales | Daniel Clemente"
+  description: "Programas y tarifas provisionales de seguimiento nutricional online de Daniel Clemente."
+eyebrow: "PROGRAMAS ONLINE"
+h1: "Programas y tarifas recibidas, todavía provisionales"
+lead: "Las inclusiones y precios proceden de material recibido. Deben validarse antes de convertirse en condiciones comerciales finales."
+hero_ctas: ["Cuéntame tu objetivo", "Ver pérdida de peso"]
+sections:
+  - id: programa-a
+    anchor: "programa-a"
+    kicker: "Programa A"
+    heading: "Seguimiento nutricional"
+    level: h2
+    paragraphs:
+      - "Seguimiento nutricional online sin seguimiento médico."
+    items:
+      - text: "Valoración nutricional inicial."
+      - text: "Plan nutricional personalizado."
+      - text: "Excel 365 con recetas y menú."
+      - text: "Seguimiento semanal y por WhatsApp."
+      - text: "Videollamada mensual y ajustes."
+    prices:
+      - duration: "2 meses"
+        price: "180 €"
+      - duration: "4 meses"
+        price: "320 €"
+      - duration: "6 meses"
+        price: "450 €"
+    disclaimers:
+      - "Tarifas orientativas/provisionales, pendientes de validación."
+  - id: programa-b
+    anchor: "programa-b"
+    kicker: "Programa B"
+    heading: "Nutrición + tratamiento médico"
+    level: h2
+    paragraphs:
+      - "En casos seleccionados, tras una valoración médica individualizada, puede contemplarse tratamiento farmacológico autorizado —incluidos, cuando proceda, medicamentos inyectables relacionados con la vía del receptor GLP-1— siempre que la profesional médica lo indique y prescriba. Se integra con seguimiento nutricional y de hábitos; no es una solución aislada."
+    items:
+      - text: "Todo lo incluido en el seguimiento nutricional."
+      - text: "Valoración médica inicial, cuando corresponda."
+      - text: "Tratamiento farmacológico autorizado, si procede y queda prescrito por la profesional médica."
+      - text: "Seguimiento nutricional, de hábitos y de la evolución."
+      - text: "Coordinación profesional según el alcance validado."
+    prices:
+      - duration: "2 meses"
+        price: "280 €"
+      - duration: "4 meses"
+        price: "420 €"
+      - duration: "6 meses"
+        price: "550 €"
+    disclaimers:
+      - "Precios, colaboración, alcance y condiciones orientativos/provisionales. La medicación no está incluida."
+  - id: condiciones-pendientes
+    heading: "Condiciones pendientes"
+    level: h2
+    paragraphs:
+      - "Forma de pago, renovaciones, cancelaciones, pausas, reembolsos, datos de contacto y alcance definitivo del tratamiento médico quedan pendientes de confirmación."
+      - "Consulta también la página de tratamiento médico y la explicación de cómo funciona el seguimiento."
+    disclaimers:
+      - "La medicación no está incluida en el precio del programa."

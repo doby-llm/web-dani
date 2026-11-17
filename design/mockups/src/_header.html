@@ -1,0 +1,27 @@
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<p class="site-notice">Web en preparación comercial · Contenido pendiente de validación</p>
+<header class="site-header" data-scrolled="false">
+  <div class="container site-header__inner">
+    <a class="brand" href="home.html" aria-label="Daniel Clemente, nutricionista. Inicio">
+      <span class="brand__mark" aria-hidden="true">DC</span>
+      <span class="brand__text"><span class="brand__name">Daniel Clemente</span><span class="brand__role">Nutricionista</span></span>
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <div class="nav-menu">
+        <button class="nav__link" type="button" aria-expanded="{{SERVICES_OPEN}}" aria-controls="services-panel">Servicios <svg class="icon icon--s" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+        <div class="nav-menu__panel" id="services-panel" {{SERVICES_HIDDEN}}>
+          <a class="nav-menu__item" href="servicio.html"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg></span><span class="nav-menu__title">Pérdida de peso</span><span class="nav-menu__desc">Reduce grasa, mejora tu composición corporal y trabaja para mantener tus resultados a largo plazo.</span></a>
+          <a class="nav-menu__item" href="medico.html"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"/></svg></span><span class="nav-menu__title">Pérdida de peso con tratamiento médico</span><span class="nav-menu__desc">No es una solución aislada: se integra con seguimiento nutricional y de hábitos.</span></a>
+          <a class="nav-menu__item" href="servicio.html"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-dumbbell"/></svg></span><span class="nav-menu__title">Nutrición deportiva</span><span class="nav-menu__desc">Mejora tu rendimiento, gana masa muscular y optimiza tu recuperación con una estrategia a tu medida.</span></a>
+          <a class="nav-menu__item" href="servicio.html"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-heart-pulse"/></svg></span><span class="nav-menu__title">Nutrición clínica</span><span class="nav-menu__desc">Seguimiento nutricional adaptado a patologías digestivas, alergias e intolerancias, dislipemias e hipertensión.</span></a>
+        </div>
+      </div>
+      <a class="nav__link" href="como-funciona.html" {{CUR_como}}>Cómo funciona</a>
+      <a class="nav__link" href="programas.html" {{CUR_programas}}>Programas</a>
+      <a class="nav__link" href="sobre-mi.html" {{CUR_sobre}}>Sobre mí</a>
+      <a class="nav__link" href="blog.html" {{CUR_blog}}>Blog</a>
+      <a class="btn btn--primary nav__cta" href="contacto.html">Contacto</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-sheet"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>Menú</button>
+  </div>
+</header>

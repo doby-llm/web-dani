@@ -1,0 +1,14 @@
+page: privacidad
+old_path: privacidad.html
+meta:
+  title: "Privacidad en preparación | Daniel Clemente"
+  description: "Política de privacidad provisional para una web sin backend ni almacenamiento, pendiente de revisión legal."
+eyebrow: "PRIVACIDAD"
+h1: "Política de privacidad en preparación"
+lead: "El formulario demo no envía ni almacena datos. Antes de conectar un proveedor real habrá que definir responsable, finalidad, base jurídica, conservación, encargados, derechos y tratamiento de datos, especialmente si hubiese datos de salud."
+hero_ctas: ["Cuéntame tu objetivo", "Ver programas"]
+sections:
+  - id: estado-documento
+    disclaimers:
+      - "Documento legal provisional, pendiente de preparación y revisión. No afirmar cumplimiento definitivo."
+    ctas: ["Volver a contacto"]
