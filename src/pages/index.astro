@@ -119,6 +119,11 @@ const aboutNote = about.disclaimers![0] as { text: string; kind: 'editorial' };
           <ul class="checks-inline">
             {home.hero_proof.map(t => <li><Icon name="check" />{t}</li>)}
           </ul>
+          <a class="med-teaser" href="#tratamiento-medico">
+            <span class="icon-badge" aria-hidden="true"><Icon name="stethoscope" /></span>
+            <span class="med-teaser__text"><strong>{medical.heading}</strong><span>{medical.ctas![0]}</span></span>
+            <Icon name="arrow-right" />
+          </a>
         </div>
         <figure class="hero__stage">
           <div class="hero__art">
@@ -136,6 +141,29 @@ const aboutNote = about.disclaimers![0] as { text: string; kind: 'editorial' };
             </ul>
           </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <!-- H4 MEDICAL (moved up, Manu/Dani 2026-11-18): right after the hero, roles as two icon cards, no food -->
+    <section class="section bg-medical med" aria-labelledby="med-title" id="tratamiento-medico">
+      <div class="container split split--5-7" style="align-items:center">
+        <div class="sec-head sec-head--stack" style="margin-bottom:0">
+          <span class="icon-badge med__badge" aria-hidden="true"><Icon name="stethoscope" /></span>
+          <h2 id="med-title">{medical.heading}</h2>
+          <p>{medicalParagraph}</p>
+          <p style="margin-top:var(--s-5)"><a class="link-arrow" href={url(services[1].path)}>{medical.ctas![0]} <Icon name="arrow-right" /></a></p>
+        </div>
+        <div class="callout">
+          {roleSplit && (
+            <table class="roles med__roles" role="table">
+              <tbody role="rowgroup">
+                <tr role="row"><th scope="row" role="rowheader"><span class="med__head"><span class="icon-badge"><Icon name="clipboard-list" /></span><span class="med__role">{rolDaniel}</span></span></th><td role="cell">{roleSplit[0]}</td></tr>
+                <tr role="row"><th scope="row" role="rowheader"><span class="med__head"><span class="icon-badge"><Icon name="stethoscope" /></span><span class="med__role">{rolMedica}</span></span></th><td role="cell">{roleSplit[1]}</td></tr>
+              </tbody>
+            </table>
+          )}
+          <div class="callout__foot"><Note note={{ text: roleSplit ? roleSplit[2] : legal, kind: 'legal' }} /></div>
+        </div>
       </div>
     </section>
 
@@ -170,28 +198,6 @@ const aboutNote = about.disclaimers![0] as { text: string; kind: 'editorial' };
             </li>
           ))}
         </ul>
-      </div>
-    </section>
-
-    <!-- H4 MEDICAL: callout with explicit roles table, no food -->
-    <section class="section bg-medical" aria-labelledby="med-title">
-      <div class="container split split--5-7" style="align-items:start">
-        <div class="sec-head sec-head--stack" style="margin-bottom:0">
-          <h2 id="med-title">{medical.heading}</h2>
-          <p>{medicalParagraph}</p>
-          <p style="margin-top:var(--s-5)"><a class="link-arrow" href={url(services[1].path)}>{medical.ctas![0]} <Icon name="arrow-right" /></a></p>
-        </div>
-        <div class="callout">
-          {roleSplit && (
-            <table class="roles">
-              <tbody>
-                <tr><th scope="row" style="border-top:0"><span><Icon name="clipboard-list" />{rolDaniel}</span></th><td style="border-top:0">{roleSplit[0]}</td></tr>
-                <tr><th scope="row"><span><Icon name="stethoscope" />{rolMedica}</span></th><td>{roleSplit[1]}</td></tr>
-              </tbody>
-            </table>
-          )}
-          <div class="callout__foot"><Note note={{ text: roleSplit ? roleSplit[2] : legal, kind: 'legal' }} /></div>
-        </div>
       </div>
     </section>
 
@@ -306,3 +312,31 @@ const aboutNote = about.disclaimers![0] as { text: string; kind: 'editorial' };
     </section>
   </main>
 </BaseLayout>
+
+<style is:global>
+  /* Medical up front (home only). Tokens only; frozen CSS untouched. */
+  .med-teaser { display: flex; align-items: center; gap: var(--s-4); margin-top: var(--s-6); padding: var(--s-3) var(--s-5) var(--s-3) var(--s-3); max-width: 30rem; border: 1px solid var(--line); border-radius: var(--r-l); background: var(--t-medical); color: var(--ink); text-decoration: none; transition: box-shadow var(--dur-2) var(--ease), transform var(--dur-2) var(--ease); }
+  .med-teaser:hover { box-shadow: var(--shadow-2, 0 6px 18px rgb(0 0 0 / 0.08)); }
+  .med-teaser:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+  .med-teaser__text { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+  .med-teaser__text strong { font-weight: 600; line-height: 1.25; }
+  .med-teaser__text span { font-size: var(--fs-small); color: var(--brand); font-weight: 600; }
+  .med-teaser > .icon { margin-left: auto; color: var(--brand); width: 1.25rem; height: 1.25rem; flex: none; }
+  .med__badge { width: 3.5rem; height: 3.5rem; margin-bottom: var(--s-4); background: var(--paper); }
+  .med__badge .icon { width: 1.7rem; height: 1.7rem; }
+  .med .callout { border-radius: var(--r-l); box-shadow: 0 10px 30px rgb(0 0 0 / 0.06); }
+  .med__roles, .med__roles tbody, .med__roles tr, .med__roles th, .med__roles td { display: block; width: auto; border: 0; }
+  .med__roles tbody { position: relative; display: grid; gap: var(--s-4); padding: var(--s-5); }
+  .med__roles tr { padding: var(--s-5); border: 1px solid var(--line); border-radius: var(--r-m); background: var(--surface); }
+  .med__roles th { padding: 0; white-space: normal; }
+  .med__roles th > .med__head { display: inline-flex; align-items: center; gap: var(--s-3); }
+  .med__roles th .icon-badge { width: 2.75rem; height: 2.75rem; }
+  .med__roles th .icon-badge .icon { width: 1.3rem; height: 1.3rem; }
+  .med__role { font-family: var(--font-serif, inherit); font-size: var(--fs-h4, 1.125rem); font-weight: 600; }
+  .med__roles td { padding: var(--s-3) 0 0; border: 0; font-size: var(--fs-body, 1rem); color: var(--ink-2); }
+  @media (min-width: 700px) {
+    .med__roles tbody { grid-template-columns: 1fr 1fr; gap: var(--s-6); }
+    .med__roles tbody::before { content: "+" / ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1; width: 2.25rem; height: 2.25rem; display: grid; place-items: center; border-radius: 50%; background: var(--brand); color: var(--paper); font-weight: 700; font-size: 1.25rem; line-height: 1; }
+  }
+  @media (max-width: 699px) { .med-teaser { max-width: none; } }
+</style>
