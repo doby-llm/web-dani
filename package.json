@@ -11,9 +11,15 @@
     "build": "astro build",
     "preview": "astro preview",
     "copy": "node scripts/build-copy.mjs",
-    "check": "npm run check:copy",
+    "check": "npm run check:copy && npm run test:copy",
     "check:copy": "node scripts/build-copy.mjs --check",
-    "shots": "node scripts/shots.mjs"
+    "shots": "node scripts/shots.mjs",
+    "build:indexable": "flock /tmp/web-dani-build.lock sh -c 'PUBLIC_INDEXABLE=true astro build --outDir dist-indexable'",
+    "test:e2e": "flock /tmp/web-dani-build.lock sh -c 'astro build && PUBLIC_INDEXABLE=true astro build --outDir dist-indexable' && playwright test",
+    "test:a11y": "playwright test tests/a11y.spec.ts",
+    "test:copy": "node tests/copy-usage.mjs",
+    "test:budgets": "node tests/budgets.mjs",
+    "lhci": "npm run build:indexable && node tests/lhci-prepare.mjs && lhci autorun --config=lighthouserc.json"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.5",
@@ -23,6 +29,9 @@
     "yaml": "^2.9.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@lhci/cli": "0.15.1",
+    "@playwright/test": "1.65.1",
     "puppeteer-core": "^24.43.1"
   }
 }

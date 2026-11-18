@@ -1,0 +1,327 @@
+[
+  {
+    "page": "aviso-legal",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "aviso-legal",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "blog",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "blog",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "como-funciona",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "como-funciona",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "como-funciona",
+    "path": "sections[1].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "como-funciona",
+    "path": "sections[2].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "contacto",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "contacto",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "contacto",
+    "path": "sections[1].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "cookies",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "cookies",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "home",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "home",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "home",
+    "path": "sections[1].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "home",
+    "path": "sections[2].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "home",
+    "path": "sections[3].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "home",
+    "path": "sections[4].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "home",
+    "path": "sections[5].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "home",
+    "path": "sections[6].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "home",
+    "path": "sections[7].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-clinica",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-clinica",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-clinica",
+    "path": "sections[1].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-clinica",
+    "path": "sections[2].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-clinica",
+    "path": "sections[3].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-clinica",
+    "path": "sections[4].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-clinica",
+    "path": "sections[5].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-deportiva",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-deportiva",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-deportiva",
+    "path": "sections[1].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-deportiva",
+    "path": "sections[2].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-deportiva",
+    "path": "sections[3].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-deportiva",
+    "path": "sections[4].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "nutricion-deportiva",
+    "path": "sections[5].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "perdida-de-peso-con-apoyo-medico",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "perdida-de-peso-con-apoyo-medico",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "perdida-de-peso-con-apoyo-medico",
+    "path": "sections[1].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "perdida-de-peso-con-apoyo-medico",
+    "path": "sections[2].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "perdida-de-peso-con-apoyo-medico",
+    "path": "sections[3].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "perdida-de-peso",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "perdida-de-peso",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "perdida-de-peso",
+    "path": "sections[1].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "perdida-de-peso",
+    "path": "sections[2].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "preguntas-frecuentes",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "preguntas-frecuentes",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "privacidad",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "privacidad",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "programas",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "programas",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "programas",
+    "path": "sections[1].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "programas",
+    "path": "sections[2].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "programas",
+    "path": "hero_ctas[1]",
+    "reason": "programas hero has no buttons (R13, mockup)"
+  },
+  {
+    "page": "servicios",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "servicios",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "servicios",
+    "path": "sections[1].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "servicios",
+    "path": "sections[0].items[0].ctas",
+    "reason": "v4 service rows have no link (T05 planner note)"
+  },
+  {
+    "page": "servicios",
+    "path": "sections[0].items[1].ctas",
+    "reason": "v4 service rows have no link (T05 planner note)"
+  },
+  {
+    "page": "servicios",
+    "path": "sections[0].items[2].ctas",
+    "reason": "v4 service rows have no link (T05 planner note)"
+  },
+  {
+    "page": "sobre-mi",
+    "path": "meta",
+    "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "sobre-mi",
+    "path": "sections[0].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "sobre-mi",
+    "path": "sections[1].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "sobre-mi",
+    "path": "sections[2].id",
+    "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "sobre-mi",
+    "path": "sections[0].images[0].src",
+    "reason": "image file replaced by portrait.webp (R15); its alt is rendered"
+  }
+]
