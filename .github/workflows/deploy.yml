@@ -37,10 +37,33 @@ jobs:
         with:
           path: dist
 
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: ${{ vars.SITE_URL || 'https://doby-llm.github.io' }}
+      BASE_PATH: ${{ vars.BASE_PATH || '/web-dani/' }}
+      PUBLIC_INDEXABLE: ${{ vars.PUBLIC_INDEXABLE || 'false' }}
+      PUBLIC_PROVISIONAL: ${{ vars.PUBLIC_PROVISIONAL || 'true' }}
+      PUBLIC_SHOW_EDITORIAL: ${{ vars.PUBLIC_SHOW_EDITORIAL || 'true' }}
+      PUBLIC_FORM_ENDPOINT: ${{ vars.PUBLIC_FORM_ENDPOINT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - run: npm run test:budgets
+      - run: npm run test:copy
+      - run: npm run lhci
+
   deploy:
     # Only main publishes: a workflow_dispatch from a feature branch builds but never replaces the live site.
     if: github.ref == 'refs/heads/main'
-    needs: build
+    needs: [build, test]
     runs-on: ubuntu-latest
     permissions:
       pages: write
