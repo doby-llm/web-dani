@@ -164,7 +164,7 @@ const aboutNote = about.disclaimers![0] as { text: string; kind: 'editorial' };
               <h3><a href={url(r.nav.path)}>{r.title}</a></h3>
               <p>{r.text}</p>
               <span class="svc-row__food" aria-hidden="true">
-                {r.food && <Image src={r.food} widths={[160, 320]} sizes="160px" alt="" />}
+                {r.food && <Image src={r.food} widths={[160, 240]} sizes="160px" quality={60} alt="" />}
               </span>
               <span class="svc-row__go" aria-hidden="true"><Icon name="arrow-right" /></span>
             </li>

@@ -35,6 +35,7 @@ const place = (o: Obj) => ['top', 'left', 'right', 'bottom']
       src={o.src}
       alt=""
       widths={[240, 480]}
+      quality={60}
       sizes="(max-width: 899px) 40vw, 20vw"
       style={`width:${o.w};${place(o)};transform:rotate(${o.rotate}deg)`}
     />
