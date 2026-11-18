@@ -1,0 +1,21 @@
+{
+  "name": "Daniel Clemente · Nutricionista",
+  "short_name": "D. Clemente",
+  "lang": "es",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#FBF8F3",
+  "theme_color": "#2F5D50",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
