@@ -4,6 +4,8 @@ import '../styles/tokens.css';
 import '../styles/base.css';
 import '../styles/components.css';
 import serifFont from '../assets/fonts/fraunces-web.woff2?url';
+import italicFont from '../assets/fonts/fraunces-italic-web.woff2?url';
+import italicFont from '../assets/fonts/fraunces-italic-web.woff2?url';
 import sansFont from '../assets/fonts/public-sans-web.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -29,6 +31,8 @@ const { title, description, ogSlug, current, hideActionBar = false, article } = 
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <Seo key={ogSlug} type={article ? 'article' : 'website'} article={article} titleOverride={title} descriptionOverride={description} />
     <link rel="preload" href={serifFont} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={italicFont} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={italicFont} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={sansFont} as="font" type="font/woff2" crossorigin />
     <slot name="head" />
   </head>
