@@ -35,7 +35,8 @@ for (const file of htmlFiles) {
   const html = readFileSync(file, 'utf8');
   const refs = new Set();
   for (const m of html.matchAll(/\s(?:href|src)="([^"]+)"/g)) refs.add(m[1]);
-  for (const m of html.matchAll(/\ssrcset="([^"]+)"/g)) for (const c of m[1].split(',')) refs.add(c.trim().split(/\s+/)[0]);
+  // The browser downloads ONE candidate per srcset; count the largest (conservative for 2x screens), not all of them (F1 ruling).
+  for (const m of html.matchAll(/\ssrcset="([^"]+)"/g)) { const cs = m[1].split(',').map(c => c.trim().split(/\s+/)); cs.sort((a, b) => parseFloat(a[1] || '0') - parseFloat(b[1] || '0')); refs.add(cs[cs.length - 1][0]); }
   const base = '/web-dani/';
   const local = [...refs]
     .filter(r => r.startsWith(base) && !r.includes('?') && r.split('#')[0].match(/\.[a-z0-9]+$/i))
