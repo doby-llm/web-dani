@@ -34,7 +34,7 @@ const graph = jsonLd({
   crumbs,
   article: post && article ? { headline: post.data.title, description, ...article } : undefined,
 });
-const robots = INDEXABLE ? 'index,follow,max-image-preview:large' : 'noindex,nofollow';
+const robots = INDEXABLE && key !== '404' ? 'index,follow,max-image-preview:large' : 'noindex,nofollow';
 ---
 <title>{title}</title>
 <meta name="description" content={description} />
