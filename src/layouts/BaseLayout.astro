@@ -53,4 +53,10 @@ const { title, description, ogSlug, current, hideActionBar = false, article } = 
   .link-arrow { padding-block: var(--s-3); margin-block: calc(var(--s-3) * -1); }
   /* Same patch for the Fiche links (inline in a dd): vertical padding only, no layout change. Fiche.astro is not in the C1 allowlist. */
   .fiche__row a { padding-block: var(--s-4); }
+  /* Mobile: the space reserved for the fixed action bar was body padding, which showed as a cream strip under the green footer.
+     Move it inside the footer so the green reaches the bottom edge (frozen components.css untouched). */
+  @media (max-width: 899px) {
+    html body { padding-bottom: 0; }
+    .site-footer { padding-bottom: calc(4.25rem + env(safe-area-inset-bottom)); }
+  }
 </style>
