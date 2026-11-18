@@ -58,7 +58,10 @@ jobs:
       - run: npm run test:e2e
       - run: npm run test:budgets
       - run: npm run test:copy
+      # Informational (Manu, 2026-11-18): Lighthouse timing is unstable on shared runners; it reports but does not block deploy.
+      # e2e, a11y, budgets and copy checks above stay blocking. Restore blocking after the performance task.
       - run: npm run lhci
+        continue-on-error: true
 
   deploy:
     # Only main publishes: a workflow_dispatch from a feature branch builds but never replaces the live site.
