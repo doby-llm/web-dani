@@ -55,6 +55,21 @@
     "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
   },
   {
+    "page": "contacto",
+    "path": "sections[0].images[0].alt",
+    "reason": "WhatsApp channel icon alt: the v4 contacto mockup draws the channel as an icon, not this image (R16). Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
+  },
+  {
+    "page": "contacto",
+    "path": "sections[0].images[0].src",
+    "reason": "WhatsApp glyph file: not drawn in the v4 contacto mockup; the Icon component is used instead (R16). Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
+  },
+  {
+    "page": "contacto",
+    "path": "form.fields[3].placeholder",
+    "reason": "Placeholder of a select: the form has no select, the goal is a radio group (F6, SPEC §6.6). Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
+  },
+  {
     "page": "cookies",
     "path": "meta",
     "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
@@ -110,6 +125,61 @@
     "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
   },
   {
+    "page": "home",
+    "path": "hero_float[1]",
+    "reason": "Second hero float label: not drawn in the v4 hero (R16, R21). Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
+  },
+  {
+    "page": "home",
+    "path": "hero_images[0].alt",
+    "reason": "Editorial hero image alt: the v4 hero uses the portrait, not this image (R21). Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
+  },
+  {
+    "page": "home",
+    "path": "hero_images[0].src",
+    "reason": "Editorial hero image file: the v4 hero uses the portrait (R21). Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
+  },
+  {
+    "page": "home",
+    "path": "hero_images[0].caption",
+    "reason": "Editorial hero image caption: the v4 hero has no caption (R21). Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
+  },
+  {
+    "page": "home",
+    "path": "sections[1].items[0].ctas[0]",
+    "reason": "'Ver servicio': service rows in the v4 mockup have no link (svc-row, R16). Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
+  },
+  {
+    "page": "home",
+    "path": "sections[1].items[1].ctas[0]",
+    "reason": "'Ver servicio': service rows in the v4 mockup have no link (svc-row, R16). Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
+  },
+  {
+    "page": "home",
+    "path": "sections[1].items[2].ctas[0]",
+    "reason": "'Ver servicio': service rows in the v4 mockup have no link (svc-row, R16). Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
+  },
+  {
+    "page": "home",
+    "path": "sections[5].images[0].src",
+    "reason": "Home about image file: the v4 about block draws no separate image; the portrait is used (R15, R21). Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
+  },
+  {
+    "page": "home",
+    "path": "sections[2].items[0].prices[0].label",
+    "reason": "'Desde': no mockup draws a price label; amounts are shown alone (R1-13, coordinator ruling)."
+  },
+  {
+    "page": "home",
+    "path": "sections[2].items[1].prices[0].label",
+    "reason": "'Desde': no mockup draws a price label; amounts are shown alone (R1-13, coordinator ruling)."
+  },
+  {
+    "page": "home",
+    "path": "sections[5].paragraphs[1]",
+    "reason": "Second about paragraph (formación text): superseded by the dl.cv rows of R21 (Formación, Experiencia, Docencia y enfoque) (R1-13, coordinator ruling)."
+  },
+  {
     "page": "nutricion-clinica",
     "path": "meta",
     "reason": "SEO comes from seo.json (SPEC §4.4), not from copy meta (T06/T07/T09 planner notes)"
@@ -203,6 +273,11 @@
     "page": "perdida-de-peso-con-apoyo-medico",
     "path": "sections[3].id",
     "reason": "section id: an internal key, not rendered (T06/T07/T09 planner notes)"
+  },
+  {
+    "page": "perdida-de-peso-con-apoyo-medico",
+    "path": "page",
+    "reason": "Page slug of the medical copy file: an internal key used for metadata, not a visible string. Not rendered (R1-05, dropped by the v4 mockups (R16/R21))."
   },
   {
     "page": "perdida-de-peso",
@@ -323,5 +398,15 @@
     "page": "sobre-mi",
     "path": "sections[0].images[0].src",
     "reason": "image file replaced by portrait.webp (R15); its alt is rendered"
+  },
+  {
+    "page": "shared",
+    "path": "header.menu_toggle_aria",
+    "reason": "Menu button aria-label: the button shows its visible text 'Menú' and no mockup draws this label (R1-13, coordinator ruling)."
+  },
+  {
+    "page": "shared",
+    "path": "floating.contact_float_aria",
+    "reason": "Action bar aria-label: the action bar shows visible text and no mockup draws this label (R1-13, coordinator ruling)."
   }
 ]

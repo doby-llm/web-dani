@@ -19,7 +19,7 @@ const categories = {
 // Microcopy (SPEC §4.3): toc.title, article.read.
 const tocTitle = 'En este artículo';
 const readTime = (n: number) => `${n} min de lectura`;
-const dateFmt = new Intl.DateTimeFormat('es-ES', { dateStyle: 'long' });
+const dateFmt = new Intl.DateTimeFormat('es-ES', { dateStyle: 'long', timeZone: 'UTC' });
 
 // Drafts are never built (draft: true is the default).
 export async function getStaticPaths() {

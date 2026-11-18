@@ -25,7 +25,7 @@ const readTime = (n: number) => `${n} min de lectura`;
 const ideas = blog.sections.find(s => s.id === 'ideas')!.items;
 const published = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
-const dateFmt = new Intl.DateTimeFormat('es-ES', { dateStyle: 'long' });
+const dateFmt = new Intl.DateTimeFormat('es-ES', { dateStyle: 'long', timeZone: 'UTC' });
 ---
 <BaseLayout title="Blog · Daniel Clemente, nutricionista" description="Artículos educativos sobre pérdida de peso, nutrición deportiva y hábitos, revisados desde la evidencia científica." ogSlug="blog" current="blog">
   <main id="main">

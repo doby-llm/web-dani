@@ -1,4 +1,5 @@
-// Q2: at 360 px, every route. No horizontal scroll, no visible text below 14 px, touch targets >= 44 x 44.
+// Q2: at 360 px, every route. No horizontal scroll, no visible text below 14 px, touch targets >= 44 x 44
+// (inline links inside running text are exempt, see below).
 import { test, expect } from '@playwright/test';
 import { routes } from './support';
 
@@ -27,9 +28,17 @@ for (const r of routes) {
     expect(smallText, smallText.join('\n')).toEqual([]);
 
     const smallTargets = await page.evaluate(() => {
+      // WCAG 2.5.8 inline exception (planner ruling, C1): a link inside a running sentence of a <p> or <li> is exempt,
+      // because its size is set by the text around it. A link that is alone in its paragraph or item is still checked.
+      const inRunningText = (el: HTMLElement) => {
+        if (getComputedStyle(el).display !== 'inline') return false;
+        const host = el.closest<HTMLElement>('p, li');
+        return !!host && host.textContent!.trim().length > el.textContent!.trim().length;
+      };
       const out: string[] = [];
       for (const el of document.querySelectorAll<HTMLElement>('a, button, summary')) {
         if (el.closest('.visually-hidden, [inert], [hidden]')) continue;
+        if (el.tagName === 'A' && inRunningText(el)) continue;
         const box = el.getBoundingClientRect();
         if (box.width === 0 || box.height === 0) continue;
         if (box.width < 44 || box.height < 44) {

@@ -44,3 +44,10 @@ const year = new Date().getFullYear();
     </div>
   </div>
 </footer>
+
+<style>
+  /* C1 R1-01: hit areas >= 44 px without a layout change. Footer links are inline: padding grows the hit area, the matching negative margin keeps the text in place;
+     the brand is handled as in Header. Tokens only. */
+  .site-footer ul a { padding-inline: var(--s-3); margin-inline: calc(var(--s-3) * -1); padding-block: var(--s-4); }
+  .site-footer .brand { padding-block: var(--s-2); margin-block: calc(var(--s-2) * -1); }
+</style>

@@ -20,3 +20,8 @@ const crumbs = items.map((it, i) => i === 0
     })}
   </ol>
 </nav>
+
+<style>
+  /* C1 R1-01: breadcrumb links are inline. Padding gives a 44 px hit area; the matching negative margin keeps the text where it was. Tokens only. */
+  .breadcrumb a { padding-inline: var(--s-3); margin-inline: calc(var(--s-3) * -1); padding-block: var(--s-4); }
+</style>
