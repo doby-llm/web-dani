@@ -1,0 +1,224 @@
+{
+  "home": {
+    "path": "",
+    "title": "Daniel Clemente · Nutricionista online",
+    "description": "Pérdida de peso, nutrición deportiva y clínica con un enfoque integral, personalizado y basado en evidencia científica. 100% online.",
+    "ogTitle": "Pérdida de peso con un enfoque integral y personalizado",
+    "ogTag": "Nutrición online",
+    "ogImage": "home",
+    "ogObject": "avocado",
+    "ogAccent": 3,
+    "crumbs": []
+  },
+  "servicios": {
+    "path": "servicios/",
+    "title": "Servicios de nutrición online · Daniel Clemente",
+    "description": "Pérdida de peso, tratamiento médico coordinado, nutrición deportiva y nutrición clínica online. Elige tu objetivo.",
+    "ogTitle": "Nutrición online para objetivos de composición corporal, deporte y salud",
+    "ogTag": "Servicios",
+    "ogImage": "servicios",
+    "ogObject": "avocado",
+    "ogAccent": 3,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Servicios", "path": "servicios/" }
+    ]
+  },
+  "perdida-de-peso": {
+    "path": "perdida-de-peso/",
+    "title": "Pérdida de peso online · Daniel Clemente",
+    "description": "Programa de pérdida de peso online con un enfoque integral, personalizado y basado en evidencia científica.",
+    "ogTitle": "Pérdida de peso con un enfoque integral y personalizado",
+    "ogTag": "Pérdida de peso",
+    "ogImage": "perdida-de-peso",
+    "ogObject": "grapefruit",
+    "ogAccent": 3,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Servicios", "path": "servicios/" },
+      { "name": "Pérdida de peso", "path": "perdida-de-peso/" }
+    ]
+  },
+  "medico": {
+    "path": "perdida-de-peso/tratamiento-medico/",
+    "title": "Pérdida de peso con tratamiento médico · Daniel Clemente",
+    "description": "Tratamiento médico cuando la profesional médica lo indique y prescriba, siempre con seguimiento nutricional y de hábitos.",
+    "ogTitle": "Pérdida de peso con tratamiento médico",
+    "ogTag": "Tratamiento médico",
+    "ogImage": "medico",
+    "ogObject": null,
+    "ogAccent": 0,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Pérdida de peso", "path": "perdida-de-peso/" },
+      { "name": "Tratamiento médico", "path": "perdida-de-peso/tratamiento-medico/" }
+    ]
+  },
+  "nutricion-deportiva": {
+    "path": "nutricion-deportiva/",
+    "title": "Nutrición deportiva online · Daniel Clemente",
+    "description": "Seguimiento nutricional para deportistas de fuerza, resistencia y otras modalidades, adaptado a tu entrenamiento y horarios.",
+    "ogTitle": "Seguimiento nutricional adaptado a tu entrenamiento y a tu vida",
+    "ogTag": "Nutrición deportiva",
+    "ogImage": "nutricion-deportiva",
+    "ogObject": "lemon-c",
+    "ogAccent": 4,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Servicios", "path": "servicios/" },
+      { "name": "Nutrición deportiva", "path": "nutricion-deportiva/" }
+    ]
+  },
+  "nutricion-clinica": {
+    "path": "nutricion-clinica/",
+    "title": "Nutrición clínica online · Daniel Clemente",
+    "description": "Seguimiento nutricional en patologías digestivas, alergias e intolerancias, dislipemias e hipertensión, adaptado a ti.",
+    "ogTitle": "Tratamiento y seguimiento nutricional adaptado a tu situación",
+    "ogTag": "Nutrición clínica",
+    "ogImage": "nutricion-clinica",
+    "ogObject": "avocado",
+    "ogAccent": 3,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Servicios", "path": "servicios/" },
+      { "name": "Nutrición clínica", "path": "nutricion-clinica/" }
+    ]
+  },
+  "como-funciona": {
+    "path": "como-funciona/",
+    "title": "Cómo funciona el seguimiento · Daniel Clemente",
+    "description": "Cinco pasos: valoración inicial, plan con recetas y menú, seguimiento semanal y por WhatsApp, videollamada mensual y ajustes.",
+    "ogTitle": "Cómo funciona el seguimiento nutricional",
+    "ogTag": "Cómo funciona",
+    "ogImage": "como-funciona",
+    "ogObject": "lemon-a",
+    "ogAccent": 3,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Cómo funciona", "path": "como-funciona/" }
+    ]
+  },
+  "programas": {
+    "path": "programas/",
+    "title": "Programas y tarifas · Daniel Clemente",
+    "description": "Seguimiento nutricional online desde 180 € / 2 meses y opción con tratamiento médico. Precios orientativos.",
+    "ogTitle": "Programas y tarifas",
+    "ogTag": "Programas",
+    "ogImage": "programas",
+    "ogObject": null,
+    "ogAccent": 0,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Programas", "path": "programas/" }
+    ]
+  },
+  "sobre-mi": {
+    "path": "sobre-mi/",
+    "title": "Sobre mí · Daniel Clemente, nutricionista",
+    "description": "Grado en nutrición (UEM), máster en endocrinología y nutrición clínica (UCAM) y más de 8 años con pacientes online.",
+    "ogTitle": "Daniel Clemente, nutricionista",
+    "ogTag": "Sobre mí",
+    "ogImage": "sobre-mi",
+    "ogObject": "lemon-a",
+    "ogAccent": 0,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Sobre mí", "path": "sobre-mi/" }
+    ]
+  },
+  "preguntas-frecuentes": {
+    "path": "preguntas-frecuentes/",
+    "title": "Preguntas frecuentes · Daniel Clemente",
+    "description": "Cómo es la primera valoración, qué recibes, cómo funciona WhatsApp, la videollamada mensual y la opción con tratamiento médico.",
+    "ogTitle": "Preguntas frecuentes antes de contactar",
+    "ogTag": "FAQ",
+    "ogImage": "preguntas-frecuentes",
+    "ogObject": null,
+    "ogAccent": 3,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Preguntas frecuentes", "path": "preguntas-frecuentes/" }
+    ]
+  },
+  "blog": {
+    "path": "blog/",
+    "title": "Blog · Daniel Clemente, nutricionista",
+    "description": "Artículos educativos sobre pérdida de peso, nutrición deportiva y hábitos, revisados desde la evidencia científica.",
+    "ogTitle": "Artículos en preparación",
+    "ogTag": "Blog",
+    "ogImage": "blog",
+    "ogObject": "lemon-b",
+    "ogAccent": 0,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Blog", "path": "blog/" }
+    ]
+  },
+  "contacto": {
+    "path": "contacto/",
+    "title": "Contacto · Daniel Clemente, nutricionista",
+    "description": "Cuéntame tu objetivo y revisa qué programa encaja mejor contigo.",
+    "ogTitle": "Cuéntame tu objetivo",
+    "ogTag": "Contacto",
+    "ogImage": "contacto",
+    "ogObject": "lemon-a",
+    "ogAccent": 0,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Contacto", "path": "contacto/" }
+    ]
+  },
+  "aviso-legal": {
+    "path": "aviso-legal/",
+    "title": "Aviso legal · Daniel Clemente",
+    "description": "Aviso legal de la web de Daniel Clemente, nutricionista: titularidad, contacto y condiciones de uso (en preparación).",
+    "ogTitle": "Aviso legal en preparación",
+    "ogTag": "Aviso legal",
+    "ogImage": "aviso-legal",
+    "ogObject": null,
+    "ogAccent": 0,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Aviso legal", "path": "aviso-legal/" }
+    ]
+  },
+  "privacidad": {
+    "path": "privacidad/",
+    "title": "Privacidad · Daniel Clemente",
+    "description": "Política de privacidad de la web de Daniel Clemente, nutricionista (en preparación). El formulario todavía no guarda datos.",
+    "ogTitle": "Política de privacidad en preparación",
+    "ogTag": "Privacidad",
+    "ogImage": "privacidad",
+    "ogObject": null,
+    "ogAccent": 0,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Privacidad", "path": "privacidad/" }
+    ]
+  },
+  "cookies": {
+    "path": "cookies/",
+    "title": "Cookies · Daniel Clemente",
+    "description": "Esta web no usa cookies ni herramientas de analítica.",
+    "ogTitle": "Política de cookies en preparación",
+    "ogTag": "Cookies",
+    "ogImage": "cookies",
+    "ogObject": null,
+    "ogAccent": 0,
+    "crumbs": [
+      { "name": "Inicio", "path": "" },
+      { "name": "Cookies", "path": "cookies/" }
+    ]
+  },
+  "404": {
+    "path": "404.html",
+    "title": null,
+    "description": null,
+    "ogTitle": "Página no encontrada",
+    "ogTag": "Inicio",
+    "ogImage": "404",
+    "ogObject": "lemon-b",
+    "ogAccent": 0,
+    "crumbs": []
+  }
+}

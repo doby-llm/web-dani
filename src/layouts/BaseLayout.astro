@@ -9,6 +9,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ActionBar from '../components/ActionBar.astro';
 import MenuSheet from '../components/MenuSheet.astro';
+import Seo from '../components/Seo.astro';
 import { PROVISIONAL } from '../lib/env';
 import shared from '../data/copy/shared.json';
 
@@ -18,16 +19,15 @@ interface Props {
   ogSlug: string;
   current?: 'como' | 'programas' | 'sobre' | 'blog' | 'servicios';
   hideActionBar?: boolean;
-  article?: { published?: string };
+  article?: { published: string; modified?: string };
 }
-const { title, description, current, hideActionBar = false } = Astro.props;
+const { title, description, ogSlug, current, hideActionBar = false, article } = Astro.props;
 ---
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
+    <Seo key={ogSlug} type={article ? 'article' : 'website'} article={article} titleOverride={title} descriptionOverride={description} />
     <link rel="preload" href={serifFont} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={sansFont} as="font" type="font/woff2" crossorigin />
     <slot name="head" />
