@@ -43,3 +43,10 @@ const { title, description, ogSlug, current, hideActionBar = false, article } = 
     <script src="../scripts/site.js"></script>
   </body>
 </html>
+
+<style is:global>
+  /* C1 touch-target patch for R1-01; frozen CSS untouched; tokens only. */
+  .link-arrow { padding-block: var(--s-3); margin-block: calc(var(--s-3) * -1); }
+  /* Same patch for the Fiche links (inline in a dd): vertical padding only, no layout change. Fiche.astro is not in the C1 allowlist. */
+  .fiche__row a { padding-block: var(--s-4); }
+</style>

@@ -86,7 +86,7 @@ const linked = i1 >= 0 && i2 > i1 + L1.length;
               {b.items.map(it => <li><Icon name="check" />{it.text}</li>)}
             </ul>
             <div style="margin-top:var(--s-5)">
-              <Note note={{ text: b.disclaimers[0].text, kind: 'legal' }} />
+              <Note note={{ text: b.disclaimers[0].text, kind: b.disclaimers[0].kind as 'provisional' }} />
             </div>
             <div class="plan__cta">
               <Button href="contacto/?objetivo=medico" variant="primary" block>{medical.hero_ctas[1]}</Button>

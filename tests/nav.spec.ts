@@ -66,14 +66,21 @@ test('N3 mobile: action bar hidden on load, shows after hero CTAs, hides over fo
   await expect(page.locator('.action-bar')).toHaveCount(0);
 });
 
-test('N4 aria-current on the nav link and on the last breadcrumb item', async ({ page }) => {
+test('N4 aria-current on the nav link, on the Servicios button and on the last breadcrumb item', async ({ page }) => {
   await page.goto('programas/');
   await expect(page.locator('nav.nav a[aria-current="page"]')).toHaveText('Programas');
+  await expect(page.locator('.nav-menu > button')).not.toHaveAttribute('aria-current');
   await page.goto('blog/');
   await expect(page.locator('nav.nav a[aria-current="page"]')).toHaveText('Blog');
 
   for (const p of pages.filter(p => p.path !== '')) {
     await page.goto(p.path);
+    // The Servicios button is current on the four service routes (ServicesMenu current prop), nowhere else.
+    const servicesBtn = page.locator('.nav-menu > button');
+    const serviceRoute = /^(servicios|perdida-de-peso|nutricion-deportiva|nutricion-clinica)\//.test(p.path);
+    if (serviceRoute) await expect(servicesBtn, `Servicios button on ${p.key}`).toHaveAttribute('aria-current', 'true');
+    else await expect(servicesBtn, `Servicios button on ${p.key}`).not.toHaveAttribute('aria-current');
+    await expect(page.locator('[data-current]'), `data-current on ${p.key}`).toHaveCount(0);
     const crumbs = page.locator('nav.breadcrumb li');
     if (await crumbs.count() === 0) continue;
     await expect(crumbs.last(), `breadcrumb of ${p.key}`).toHaveAttribute('aria-current', 'page');

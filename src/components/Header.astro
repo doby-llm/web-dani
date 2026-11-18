@@ -25,3 +25,8 @@ const { current } = Astro.props;
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-sheet"><Icon name="menu" />Menú</button>
   </div>
 </header>
+
+<style>
+  /* C1 R1-01: the brand is 36 px tall at 360 px. Padding gives a 44 px hit area; the negative margin keeps the layout. Tokens only. */
+  .brand { padding-block: var(--s-2); margin-block: calc(var(--s-2) * -1); }
+</style>

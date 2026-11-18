@@ -20,7 +20,7 @@ const descriptions: Record<string, string> = {
 };
 ---
 <div class="nav-menu">
-  <button class="nav__link" type="button" aria-expanded="false" aria-controls="services-panel" data-current={current ? 'true' : undefined}>Servicios <Icon name="chevron-down" class="icon--s" /></button>
+  <button class="nav__link" type="button" aria-expanded="false" aria-controls="services-panel" aria-current={current ? 'true' : undefined}>Servicios <Icon name="chevron-down" class="icon--s" /></button>
   <div class="nav-menu__panel" id="services-panel" hidden>
     {services.map(s => (
       <a class="nav-menu__item" href={url(s.path)}>

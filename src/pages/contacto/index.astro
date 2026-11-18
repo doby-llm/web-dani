@@ -78,12 +78,12 @@ const navContact = 'Contacto';
             {canales.items!.map((item, i) => (
               <li class="channel">
                 <span class="icon-badge"><Icon name={channelIcons[i]} /></span>
-                <div><h3>{item.title}</h3><p>{item.text}</p></div>
+                <div><h2>{item.title}</h2><p>{item.text}</p></div>
               </li>
             ))}
           </ul>
           <div class="panel" style="margin-top:var(--s-5)">
-            <h3>{espera.heading}</h3>
+            <h2>{espera.heading}</h2>
             <p style="margin-top:var(--s-2)">{espera.paragraphs[0]}</p>
           </div>
         </aside>
@@ -130,7 +130,7 @@ const navContact = 'Contacto';
 
             <input type="hidden" name="programa" value="" />
             <div class="visually-hidden" aria-hidden="true">
-              <label>Empresa<input name="empresa" tabindex="-1" autocomplete="off" /></label>
+              <label><input name="empresa" tabindex="-1" autocomplete="off" /></label>
             </div>
 
             <button class="btn btn--primary btn--block" type="submit">{contacto.form.submit}<Icon name="arrow-right" /></button>
@@ -161,4 +161,12 @@ const navContact = 'Contacto';
   .form-status > [data-when] { display: flex; gap: var(--s-3); align-items: flex-start; }
   .form-status[data-state="success"] [data-when="error"],
   .form-status[data-state="error"] [data-when="success"] { display: none; }
+
+  /* C1 R1-09: the channel titles and the "Qué se espera" title are h2 (no skipped level, R3).
+     Look unchanged: the h3 rules of components.css (.channel h3, .panel h3) copied here, tokens only. */
+  .channel h2 { font-size: 1rem; font-family: var(--font-sans); font-weight: 650; letter-spacing: 0; }
+  aside .panel h2 { font-size: var(--fs-h3); }
+
+  /* C1 R1-02: components.css drops the focus outline on .input (outline: none). Visible focus ring for the text fields, same as .goal-chip. */
+  .input:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 </style>

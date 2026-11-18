@@ -15,12 +15,13 @@ const decode = s => s
   .replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
 const norm = s => s.replace(/\s+/g, ' ').trim();
 
-// Haystacks: raw decoded HTML (catches attributes) and the same with tags removed (catches text split by <em>).
+// Haystacks: raw decoded HTML (catches attributes) and the same with tags removed (catches text split by inline
+// elements such as <em>, or by inline links inside a sentence). Tags are removed without a space, then whitespace is collapsed.
 const htmlFiles = [];
 const walk = dir => { for (const n of readdirSync(dir)) { const p = join(dir, n); if (statSync(p).isDirectory()) walk(p); else if (n.endsWith('.html')) htmlFiles.push(p); } };
 walk(dist);
 const raw = norm(htmlFiles.map(f => decode(readFileSync(f, 'utf8'))).join('\n'));
-const text = norm(htmlFiles.map(f => decode(readFileSync(f, 'utf8')).replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>]+>/g, ' ')).join('\n'));
+const text = norm(htmlFiles.map(f => decode(readFileSync(f, 'utf8')).replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>]+>/g, '')).join('\n'));
 // Rendering transforms this check accepts, and nothing more:
 //  - fully uppercase brand strings are shown in title case by brandCase() (lib/text.ts);
 //  - {año} is the footer year span (refreshed by site.js);
