@@ -330,7 +330,8 @@ const aboutNote = about.disclaimers![0] as { text: string; kind: 'editorial' };
   .med__roles tr { padding: var(--s-5); border: 1px solid var(--line); border-radius: var(--r-m); background: var(--surface); }
   .med__roles th { padding: 0; white-space: normal; }
   .med__roles th > .med__head { display: inline-flex; align-items: center; gap: var(--s-3); }
-  .med__roles th .icon-badge { width: 2.75rem; height: 2.75rem; }
+  /* frozen `.roles th span` forces inline-flex on the badge too, which left the icon off-centre: restore the badge grid */
+  .med__roles th .icon-badge { display: grid; place-items: center; gap: 0; width: 2.75rem; height: 2.75rem; }
   .med__roles th .icon-badge .icon { width: 1.3rem; height: 1.3rem; }
   .med__role { font-family: var(--font-serif, inherit); font-size: var(--fs-h4, 1.125rem); font-weight: 600; }
   .med__roles td { padding: var(--s-3) 0 0; border: 0; font-size: var(--fs-body, 1rem); color: var(--ink-2); }
