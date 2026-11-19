@@ -53,6 +53,9 @@ const { title, description, ogSlug, current, hideActionBar = false, article } = 
   .link-arrow { padding-block: var(--s-3); margin-block: calc(var(--s-3) * -1); }
   /* Same patch for the Fiche links (inline in a dd): vertical padding only, no layout change. Fiche.astro is not in the C1 allowlist. */
   .fiche__row a { padding-block: var(--s-4); }
+  /* CV lists (Formación on home and Sobre mí): stacked lines had no marker; add a brand dot like the other lists. */
+  .cv__row dd ul li { display: grid; grid-template-columns: 0.5rem minmax(0, 1fr); column-gap: var(--s-3); align-items: start; }
+  .cv__row dd ul li::before { content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--brand); margin-top: calc(0.8em - 0.25rem); }
   /* Mobile: the space reserved for the fixed action bar was body padding, which showed as a cream strip under the green footer.
      Move it inside the footer so the green reaches the bottom edge (frozen components.css untouched). */
   @media (max-width: 899px) {
